@@ -18,10 +18,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="PokéRate" id="YVe-w0-bfh"/>
+                    <connections>
+                        <segue destination="YuS-Xc-5Ak" kind="presentation" identifier="showPokemonListSegue" id="tWp-PA-w2w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057" y="387"/>
+        </scene>
+        <!--PokemonData-->
+        <scene sceneID="NhI-mD-R3h">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmD-lk-R2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="PokemonData" id="YuS-Xc-5Ak" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1622.5" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nEY-nA-CU6">

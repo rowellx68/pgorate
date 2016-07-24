@@ -37,6 +37,7 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
                 inventoryItems = inventory.inventoryDelta.inventoryItems
             }
             
+            performSegueWithIdentifier("showPokemonListSegue", sender: nil)
         }
     }
     

@@ -21,6 +21,14 @@ class ViewController: FormViewController {
         Auth.sharedInstance.delegate = self
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPokemonListSegue" {
+            let view = segue.destinationViewController as! PokemonDataViewController
+            view.playerData = playerData
+            view.inventoryItems = inventoryItems
+        }
+    }
+    
     func createForm() {
         form +++ Section("Account Type")
             <<< SegmentedRow<String>("acc_type") {
