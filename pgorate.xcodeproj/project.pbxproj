@@ -8,6 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		118F18EA30BE96A546861BDF /* Pods_pgorate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190A0CFD675575730A89E1F4 /* Pods_pgorate.framework */; };
+		DD41F9131D452821005E9705 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90B1D452821005E9705 /* Auth.swift */; };
+		DD41F9141D452821005E9705 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90C1D452821005E9705 /* AuthDelegate.swift */; };
+		DD41F9151D452821005E9705 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90D1D452821005E9705 /* Extensions.swift */; };
+		DD41F9161D452821005E9705 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90E1D452821005E9705 /* Globals.swift */; };
+		DD41F9171D452821005E9705 /* PGoApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90F1D452821005E9705 /* PGoApiDelegate.swift */; };
+		DD41F9181D452821005E9705 /* PGoApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9101D452821005E9705 /* PGoApiRequest.swift */; };
+		DD41F9191D452821005E9705 /* RpcApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9111D452821005E9705 /* RpcApi.swift */; };
+		DD41F91A1D452821005E9705 /* S2Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9121D452821005E9705 /* S2Geometry.swift */; };
+		DD41F9311D452837005E9705 /* Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F91C1D452837005E9705 /* Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift */; };
+		DD41F9321D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F91D1D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift */; };
+		DD41F9331D452837005E9705 /* Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F91E1D452837005E9705 /* Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift */; };
+		DD41F9341D452837005E9705 /* Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F91F1D452837005E9705 /* Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift */; };
+		DD41F9351D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9201D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift */; };
+		DD41F9361D452837005E9705 /* Pogoprotos.Data.PogoprotosData.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9211D452837005E9705 /* Pogoprotos.Data.PogoprotosData.proto.swift */; };
+		DD41F9371D452837005E9705 /* Pogoprotos.Enums.PogoprotosEnums.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9221D452837005E9705 /* Pogoprotos.Enums.PogoprotosEnums.proto.swift */; };
+		DD41F9381D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9231D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift */; };
+		DD41F9391D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9241D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift */; };
+		DD41F93A1D452837005E9705 /* Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9251D452837005E9705 /* Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift */; };
+		DD41F93B1D452837005E9705 /* Pogoprotos.Map.PogoprotosMap.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9261D452837005E9705 /* Pogoprotos.Map.PogoprotosMap.proto.swift */; };
+		DD41F93C1D452837005E9705 /* Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9271D452837005E9705 /* Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift */; };
+		DD41F93D1D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9281D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift */; };
+		DD41F93E1D452837005E9705 /* Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9291D452837005E9705 /* Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift */; };
+		DD41F93F1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92A1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift */; };
+		DD41F9401D452837005E9705 /* Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92B1D452837005E9705 /* Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift */; };
+		DD41F9411D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92C1D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift */; };
+		DD41F9421D452837005E9705 /* Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92D1D452837005E9705 /* Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift */; };
+		DD41F9431D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92E1D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift */; };
+		DD41F9441D452837005E9705 /* Pogoprotos.Settings.PogoprotosSettings.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F92F1D452837005E9705 /* Pogoprotos.Settings.PogoprotosSettings.proto.swift */; };
+		DD41F9451D452837005E9705 /* Pogoprotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F9301D452837005E9705 /* Pogoprotos.swift */; };
 		DDA6C8801D4525CC00625073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6C87F1D4525CC00625073 /* AppDelegate.swift */; };
 		DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6C8811D4525CC00625073 /* ViewController.swift */; };
 		DDA6C8851D4525CC00625073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8831D4525CC00625073 /* Main.storyboard */; };
@@ -19,6 +48,35 @@
 		190A0CFD675575730A89E1F4 /* Pods_pgorate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pgorate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D29997F3666A4AC18821FBD /* Pods-pgorate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pgorate.release.xcconfig"; path = "Pods/Target Support Files/Pods-pgorate/Pods-pgorate.release.xcconfig"; sourceTree = "<group>"; };
 		A5DB97610363581C41845D82 /* Pods-pgorate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pgorate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pgorate/Pods-pgorate.debug.xcconfig"; sourceTree = "<group>"; };
+		DD41F90B1D452821005E9705 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = pgoapi/Auth.swift; sourceTree = "<group>"; };
+		DD41F90C1D452821005E9705 /* AuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDelegate.swift; path = pgoapi/AuthDelegate.swift; sourceTree = "<group>"; };
+		DD41F90D1D452821005E9705 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = pgoapi/Extensions.swift; sourceTree = "<group>"; };
+		DD41F90E1D452821005E9705 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = pgoapi/Globals.swift; sourceTree = "<group>"; };
+		DD41F90F1D452821005E9705 /* PGoApiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGoApiDelegate.swift; path = pgoapi/PGoApiDelegate.swift; sourceTree = "<group>"; };
+		DD41F9101D452821005E9705 /* PGoApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGoApiRequest.swift; path = pgoapi/PGoApiRequest.swift; sourceTree = "<group>"; };
+		DD41F9111D452821005E9705 /* RpcApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RpcApi.swift; path = pgoapi/RpcApi.swift; sourceTree = "<group>"; };
+		DD41F9121D452821005E9705 /* S2Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = S2Geometry.swift; path = pgoapi/S2Geometry.swift; sourceTree = "<group>"; };
+		DD41F91C1D452837005E9705 /* Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift; path = protos/Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift; sourceTree = "<group>"; };
+		DD41F91D1D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift; path = protos/Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift; sourceTree = "<group>"; };
+		DD41F91E1D452837005E9705 /* Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift; path = protos/Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift; sourceTree = "<group>"; };
+		DD41F91F1D452837005E9705 /* Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift; path = protos/Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift; sourceTree = "<group>"; };
+		DD41F9201D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift; path = protos/Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift; sourceTree = "<group>"; };
+		DD41F9211D452837005E9705 /* Pogoprotos.Data.PogoprotosData.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Data.PogoprotosData.proto.swift; path = protos/Pogoprotos.Data.PogoprotosData.proto.swift; sourceTree = "<group>"; };
+		DD41F9221D452837005E9705 /* Pogoprotos.Enums.PogoprotosEnums.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Enums.PogoprotosEnums.proto.swift; path = protos/Pogoprotos.Enums.PogoprotosEnums.proto.swift; sourceTree = "<group>"; };
+		DD41F9231D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift; path = protos/Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift; sourceTree = "<group>"; };
+		DD41F9241D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Inventory.PogoprotosInventory.proto.swift; path = protos/Pogoprotos.Inventory.PogoprotosInventory.proto.swift; sourceTree = "<group>"; };
+		DD41F9251D452837005E9705 /* Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift; path = protos/Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift; sourceTree = "<group>"; };
+		DD41F9261D452837005E9705 /* Pogoprotos.Map.PogoprotosMap.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Map.PogoprotosMap.proto.swift; path = protos/Pogoprotos.Map.PogoprotosMap.proto.swift; sourceTree = "<group>"; };
+		DD41F9271D452837005E9705 /* Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift; path = protos/Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift; sourceTree = "<group>"; };
+		DD41F9281D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift; path = protos/Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift; sourceTree = "<group>"; };
+		DD41F9291D452837005E9705 /* Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift; path = protos/Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift; sourceTree = "<group>"; };
+		DD41F92A1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift; path = protos/Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift; sourceTree = "<group>"; };
+		DD41F92B1D452837005E9705 /* Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift; path = protos/Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift; sourceTree = "<group>"; };
+		DD41F92C1D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift; path = protos/Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift; sourceTree = "<group>"; };
+		DD41F92D1D452837005E9705 /* Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift; path = protos/Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift; sourceTree = "<group>"; };
+		DD41F92E1D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift; path = protos/Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift; sourceTree = "<group>"; };
+		DD41F92F1D452837005E9705 /* Pogoprotos.Settings.PogoprotosSettings.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.Settings.PogoprotosSettings.proto.swift; path = protos/Pogoprotos.Settings.PogoprotosSettings.proto.swift; sourceTree = "<group>"; };
+		DD41F9301D452837005E9705 /* Pogoprotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pogoprotos.swift; path = protos/Pogoprotos.swift; sourceTree = "<group>"; };
 		DDA6C87C1D4525CC00625073 /* PokéRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéRate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6C87F1D4525CC00625073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6C8811D4525CC00625073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +115,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DD41F91B1D45282B005E9705 /* pgoapi */ = {
+			isa = PBXGroup;
+			children = (
+				DD41F90B1D452821005E9705 /* Auth.swift */,
+				DD41F90C1D452821005E9705 /* AuthDelegate.swift */,
+				DD41F90D1D452821005E9705 /* Extensions.swift */,
+				DD41F90E1D452821005E9705 /* Globals.swift */,
+				DD41F90F1D452821005E9705 /* PGoApiDelegate.swift */,
+				DD41F9101D452821005E9705 /* PGoApiRequest.swift */,
+				DD41F9111D452821005E9705 /* RpcApi.swift */,
+				DD41F9121D452821005E9705 /* S2Geometry.swift */,
+			);
+			name = pgoapi;
+			sourceTree = "<group>";
+		};
+		DD41F9461D45283E005E9705 /* protos */ = {
+			isa = PBXGroup;
+			children = (
+				DD41F91C1D452837005E9705 /* Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift */,
+				DD41F91D1D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift */,
+				DD41F91E1D452837005E9705 /* Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift */,
+				DD41F91F1D452837005E9705 /* Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift */,
+				DD41F9201D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift */,
+				DD41F9211D452837005E9705 /* Pogoprotos.Data.PogoprotosData.proto.swift */,
+				DD41F9221D452837005E9705 /* Pogoprotos.Enums.PogoprotosEnums.proto.swift */,
+				DD41F9231D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift */,
+				DD41F9241D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift */,
+				DD41F9251D452837005E9705 /* Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift */,
+				DD41F9261D452837005E9705 /* Pogoprotos.Map.PogoprotosMap.proto.swift */,
+				DD41F9271D452837005E9705 /* Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift */,
+				DD41F9281D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift */,
+				DD41F9291D452837005E9705 /* Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift */,
+				DD41F92A1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift */,
+				DD41F92B1D452837005E9705 /* Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift */,
+				DD41F92C1D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift */,
+				DD41F92D1D452837005E9705 /* Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift */,
+				DD41F92E1D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift */,
+				DD41F92F1D452837005E9705 /* Pogoprotos.Settings.PogoprotosSettings.proto.swift */,
+				DD41F9301D452837005E9705 /* Pogoprotos.swift */,
+			);
+			name = protos;
+			sourceTree = "<group>";
+		};
 		DDA6C8731D4525CC00625073 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +179,8 @@
 		DDA6C87E1D4525CC00625073 /* pgorate */ = {
 			isa = PBXGroup;
 			children = (
+				DD41F9461D45283E005E9705 /* protos */,
+				DD41F91B1D45282B005E9705 /* pgoapi */,
 				DDA6C87F1D4525CC00625073 /* AppDelegate.swift */,
 				DDA6C8811D4525CC00625073 /* ViewController.swift */,
 				DDA6C8831D4525CC00625073 /* Main.storyboard */,
@@ -210,8 +313,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD41F9421D452837005E9705 /* Pogoprotos.Settings.Master.PogoprotosSettingsMaster.proto.swift in Sources */,
+				DD41F9351D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift in Sources */,
+				DD41F9151D452821005E9705 /* Extensions.swift in Sources */,
+				DD41F9411D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
+				DD41F93D1D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift in Sources */,
+				DD41F91A1D452821005E9705 /* S2Geometry.swift in Sources */,
+				DD41F9451D452837005E9705 /* Pogoprotos.swift in Sources */,
+				DD41F93B1D452837005E9705 /* Pogoprotos.Map.PogoprotosMap.proto.swift in Sources */,
+				DD41F9161D452821005E9705 /* Globals.swift in Sources */,
+				DD41F9371D452837005E9705 /* Pogoprotos.Enums.PogoprotosEnums.proto.swift in Sources */,
+				DD41F9341D452837005E9705 /* Pogoprotos.Data.Logs.PogoprotosDataLogs.proto.swift in Sources */,
+				DD41F9311D452837005E9705 /* Pogoprotos.Data.Battle.PogoprotosDataBattle.proto.swift in Sources */,
+				DD41F9191D452821005E9705 /* RpcApi.swift in Sources */,
 				DDA6C8801D4525CC00625073 /* AppDelegate.swift in Sources */,
+				DD41F93A1D452837005E9705 /* Pogoprotos.Map.Fort.PogoprotosMapFort.proto.swift in Sources */,
+				DD41F93E1D452837005E9705 /* Pogoprotos.Networking.Requests.Messages.PogoprotosNetworkingRequestsMessages.proto.swift in Sources */,
+				DD41F93F1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift in Sources */,
+				DD41F9141D452821005E9705 /* AuthDelegate.swift in Sources */,
+				DD41F9431D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift in Sources */,
+				DD41F9391D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift in Sources */,
+				DD41F9321D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift in Sources */,
+				DD41F9381D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift in Sources */,
+				DD41F93C1D452837005E9705 /* Pogoprotos.Map.Pokemon.PogoprotosMapPokemon.proto.swift in Sources */,
+				DD41F9441D452837005E9705 /* Pogoprotos.Settings.PogoprotosSettings.proto.swift in Sources */,
+				DD41F9331D452837005E9705 /* Pogoprotos.Data.Gym.PogoprotosDataGym.proto.swift in Sources */,
+				DD41F9171D452821005E9705 /* PGoApiDelegate.swift in Sources */,
+				DD41F9401D452837005E9705 /* Pogoprotos.Networking.Responses.PogoprotosNetworkingResponses.proto.swift in Sources */,
+				DD41F9131D452821005E9705 /* Auth.swift in Sources */,
+				DD41F9181D452821005E9705 /* PGoApiRequest.swift in Sources */,
+				DD41F9361D452837005E9705 /* Pogoprotos.Data.PogoprotosData.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
