@@ -15,6 +15,7 @@ class ViewController: FormViewController {
         super.viewDidLoad()
         
         createForm()
+        Auth.sharedInstance.delegate = self
     }
     
     func createForm() {

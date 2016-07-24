@@ -42,6 +42,7 @@
 		DDA6C8851D4525CC00625073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8831D4525CC00625073 /* Main.storyboard */; };
 		DDA6C8871D4525CC00625073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8861D4525CC00625073 /* Assets.xcassets */; };
 		DDA6C88A1D4525CC00625073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8881D4525CC00625073 /* LaunchScreen.storyboard */; };
+		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		DDA6C8861D4525CC00625073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA6C8891D4525CC00625073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA6C88B1D4525CC00625073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				DDA6C8861D4525CC00625073 /* Assets.xcassets */,
 				DDA6C8881D4525CC00625073 /* LaunchScreen.storyboard */,
 				DDA6C88B1D4525CC00625073 /* Info.plist */,
+				DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */,
 			);
 			path = pgorate;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				DD41F9351D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift in Sources */,
 				DD41F9151D452821005E9705 /* Extensions.swift in Sources */,
 				DD41F9411D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift in Sources */,
+				DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
 				DD41F93D1D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift in Sources */,
 				DD41F91A1D452821005E9705 /* S2Geometry.swift in Sources */,
