@@ -18,11 +18,13 @@ class Auth {
     var expires: String?
     var loggedIn: Bool = false
     var delegate: AuthDelegate?
+    var provider: String!
 
     func login(username:String, password:String) {
-        print("Starting login...")
+        //print("Starting login...")
         self.username = username
         self.password = password
+        self.provider = "ptc"
 
         // Disable redirects
         let delegate = Alamofire.Manager.sharedInstance.delegate
@@ -42,14 +44,14 @@ class Auth {
                 if let JSON = response.result.value {
                     let lt = JSON["lt"] as! String
                     let execution = JSON["execution"] as! String
-                    print("Got login information!\nlt: \(lt)\nexecution: \(execution)")
+                    //print("Got login information!\nlt: \(lt)\nexecution: \(execution)")
                     self.getTicket(lt, execution: execution)
                 }
         }
     }
 
     func getTicket(lt: String, execution: String) {
-        print("Requesting ticket...")
+        //print("Requesting ticket...")
 
         let parameters = [
             "lt": lt,
@@ -64,7 +66,7 @@ class Auth {
                 if let location = response.response!.allHeaderFields["Location"] as? String {
                     let ticketRange = location.rangeOfString("?ticket=")
                     let ticket = String(location.characters.suffixFrom(ticketRange!.endIndex))
-                    print("Got ticket: \(ticket)")
+                    //print("Got ticket: \(ticket)")
                     self.loginOauth(ticket)
                 } else {
                     self.delegate?.didNotReceiveAuth()
@@ -104,7 +106,7 @@ class Auth {
                 self.expires = value.substringWithRange(eSwiftRange)
 
                 self.loggedIn = true
-                print("Login successful!\nAccess token: \(self.accessToken)")
+                //print("Login successful!\nAccess token: \(self.accessToken)")
                 self.delegate?.didReceiveAuth()
             }
     }

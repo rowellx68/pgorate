@@ -66,7 +66,7 @@ class RpcApi {
         // requestBuilder.altitude = location.altitude
 
         let authInfoBuilder = requestBuilder.getAuthInfoBuilder()
-        authInfoBuilder.provider = "ptc"
+        authInfoBuilder.provider = Auth.sharedInstance.provider
         let authInfoTokenBuilder = authInfoBuilder.getTokenBuilder()
         authInfoTokenBuilder.contents = Auth.sharedInstance.accessToken!
         authInfoTokenBuilder.unknown2 = 59
