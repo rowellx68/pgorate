@@ -15,7 +15,7 @@ class PokemonDataTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = playerData.username
+        self.navigationItem.title = "player name"
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
