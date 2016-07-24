@@ -18,25 +18,20 @@ class PokemonDataViewController: UINavigationController {
 
         let rootViewController = PokemonDataTableViewController()
         rootViewController.playerData = playerData
-        rootViewController.inventoryItems = inventoryItems
+        rootViewController.inventoryItems = filterPokemonFromInventory(inventoryItems)
         
         self.viewControllers = [rootViewController]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func filterPokemonFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> [Pogoprotos.Inventory.InventoryItem] {
+        var pokemon:[Pogoprotos.Inventory.InventoryItem] = []
+        
+        for item in inventory {
+            if item.inventoryItemData.hasPokemonData && !item.inventoryItemData.pokemonData.isEgg {
+                pokemon.append(item)
+            }
+        }
+        
+        return pokemon
     }
-    */
-
 }

@@ -65,6 +65,7 @@ class ViewController: FormViewController {
         if username.value != nil && password.value != nil {
             Auth.sharedInstance.login(username.value!, password: password.value!)
             button.disabled = true
+            button.reload()
         } else {
             showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
         }

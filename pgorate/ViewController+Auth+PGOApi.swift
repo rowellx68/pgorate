@@ -19,6 +19,7 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
     func didNotReceiveAuth() {
         let button = form.rowByTag("btn_login") as! ButtonRow
         button.disabled = false
+        button.reload()
         
         showAlert("Login Failed", message: "Please check your credentials and try again.")
     }
@@ -49,6 +50,7 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
     func didReceiveApiError(intent: ApiIntent, statusCode: Int?) {
         let button = form.rowByTag("btn_login") as! ButtonRow
         button.disabled = false
+        button.reload()
         
         showAlert("Oops", message: "The API encountered an error. Error code: \(statusCode)")
     }
