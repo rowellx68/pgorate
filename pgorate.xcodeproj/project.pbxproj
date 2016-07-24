@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		118F18EA30BE96A546861BDF /* Pods_pgorate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190A0CFD675575730A89E1F4 /* Pods_pgorate.framework */; };
 		DDA6C8801D4525CC00625073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6C87F1D4525CC00625073 /* AppDelegate.swift */; };
 		DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6C8811D4525CC00625073 /* ViewController.swift */; };
 		DDA6C8851D4525CC00625073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8831D4525CC00625073 /* Main.storyboard */; };
@@ -15,7 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DDA6C87C1D4525CC00625073 /* pgorate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pgorate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		190A0CFD675575730A89E1F4 /* Pods_pgorate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pgorate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D29997F3666A4AC18821FBD /* Pods-pgorate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pgorate.release.xcconfig"; path = "Pods/Target Support Files/Pods-pgorate/Pods-pgorate.release.xcconfig"; sourceTree = "<group>"; };
+		A5DB97610363581C41845D82 /* Pods-pgorate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pgorate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pgorate/Pods-pgorate.debug.xcconfig"; sourceTree = "<group>"; };
+		DDA6C87C1D4525CC00625073 /* PokéRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéRate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA6C87F1D4525CC00625073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA6C8811D4525CC00625073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDA6C8841D4525CC00625073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,24 +33,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				118F18EA30BE96A546861BDF /* Pods_pgorate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54E9E6EB85C0FBD2FF60AB41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5DB97610363581C41845D82 /* Pods-pgorate.debug.xcconfig */,
+				3D29997F3666A4AC18821FBD /* Pods-pgorate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F843D79955FD2DF5D752570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				190A0CFD675575730A89E1F4 /* Pods_pgorate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDA6C8731D4525CC00625073 = {
 			isa = PBXGroup;
 			children = (
 				DDA6C87E1D4525CC00625073 /* pgorate */,
 				DDA6C87D1D4525CC00625073 /* Products */,
+				54E9E6EB85C0FBD2FF60AB41 /* Pods */,
+				9F843D79955FD2DF5D752570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DDA6C87D1D4525CC00625073 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDA6C87C1D4525CC00625073 /* pgorate.app */,
+				DDA6C87C1D4525CC00625073 /* PokéRate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDA6C88E1D4525CC00625073 /* Build configuration list for PBXNativeTarget "pgorate" */;
 			buildPhases = (
+				182B6F00B1BD0B57403D12EF /* [CP] Check Pods Manifest.lock */,
 				DDA6C8781D4525CC00625073 /* Sources */,
 				DDA6C8791D4525CC00625073 /* Frameworks */,
 				DDA6C87A1D4525CC00625073 /* Resources */,
+				6507C7A8801E5280A1C77B13 /* [CP] Embed Pods Frameworks */,
+				51C7D76E894970287462A5A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -81,7 +108,7 @@
 			);
 			name = pgorate;
 			productName = pgorate;
-			productReference = DDA6C87C1D4525CC00625073 /* pgorate.app */;
+			productReference = DDA6C87C1D4525CC00625073 /* PokéRate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		182B6F00B1BD0B57403D12EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51C7D76E894970287462A5A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pgorate/Pods-pgorate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6507C7A8801E5280A1C77B13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pgorate/Pods-pgorate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDA6C8781D4525CC00625073 /* Sources */ = {
@@ -247,23 +322,27 @@
 		};
 		DDA6C88F1D4525CC00625073 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DB97610363581C41845D82 /* Pods-pgorate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pgorate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.heria.rowell.pgorate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.rowell.pgorate;
+				PRODUCT_NAME = "PokéRate";
 			};
 			name = Debug;
 		};
 		DDA6C8901D4525CC00625073 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D29997F3666A4AC18821FBD /* Pods-pgorate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pgorate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.heria.rowell.pgorate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.rowell.pgorate;
+				PRODUCT_NAME = "PokéRate";
 			};
 			name = Release;
 		};
@@ -286,6 +365,7 @@
 				DDA6C8901D4525CC00625073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
