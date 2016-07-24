@@ -50,7 +50,7 @@ class ViewController: FormViewController {
         }
         
             +++ Section(header: "", footer: "Use at your own risk. Don't cry if Niantic bans you.")
-            <<< ButtonRow() {
+            <<< ButtonRow("btn_login") {
                 $0.title = "Login"
         }.onCellSelection({ (cell, row) in
             self.validateAndGetCredentials()
@@ -58,11 +58,13 @@ class ViewController: FormViewController {
     }
     
     func validateAndGetCredentials() {
+        let button = form.rowByTag("btn_login") as! ButtonRow
         let username = form.rowByTag("ptc_username") as! TextRow
         let password = form.rowByTag("password") as! PasswordRow
         
         if username.value != nil && password.value != nil {
             Auth.sharedInstance.login(username.value!, password: password.value!)
+            button.disabled = true
         } else {
             showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
         }
