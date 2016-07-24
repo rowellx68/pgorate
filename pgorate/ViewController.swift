@@ -10,6 +10,9 @@ import UIKit
 import Eureka
 
 class ViewController: FormViewController {
+    
+    var playerData: Pogoprotos.Data.PlayerData!
+    var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,18 @@ class ViewController: FormViewController {
         let username = form.rowByTag("ptc_username") as! TextRow
         let password = form.rowByTag("password") as! PasswordRow
         
-        print("username: \(username.value) \tpassword: \(password.value)")
+        if username.value != nil && password.value != nil {
+            Auth.sharedInstance.login(username.value!, password: password.value!)
+        } else {
+            showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 

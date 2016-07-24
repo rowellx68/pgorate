@@ -15,21 +15,32 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
     }
     
     func didNotReceiveAuth() {
-        print("Failed to auth!")
+        showAlert("Login Failed", message: "Please check your credentials and try again.")
     }
     
     func didReceiveApiResponse(intent: ApiIntent, response: ApiResponse) {
         if (intent == .Login) {
             Api.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
             let request = PGoApiRequest()
+            request.getPlayer()
+            request.getInventory()
             request.makeRequest(.GetMapObjects, delegate: self)
         } else if (intent == .GetMapObjects) {
-            print(response.response)
-            print(response.subresponses)
+            let player = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetPlayerResponse
+            let inventory = response.subresponses[1] as! Pogoprotos.Networking.Responses.GetInventoryResponse
+            
+            if player.hasPlayerData {
+                playerData = player.playerData
+            }
+            
+            if inventory.hasInventoryDelta {
+                inventoryItems = inventory.inventoryDelta.inventoryItems
+            }
+            
         }
     }
     
     func didReceiveApiError(intent: ApiIntent, statusCode: Int?) {
-        print("API Error: \(statusCode)")
+        showAlert("Oops", message: "The API encountered an error. Error code: \(statusCode)")
     }
 }
