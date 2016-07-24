@@ -1,9 +1,11 @@
 PODS:
   - Alamofire (3.4.1)
+  - Eureka (1.7.0)
   - ProtocolBuffers-Swift (3.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Eureka
   - ProtocolBuffers-Swift (from `https://github.com/alexeyxo/protobuf-swift`, branch `ProtoBuf3.0-Swift2.0`)
 
 EXTERNAL SOURCES:
@@ -18,8 +20,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   ProtocolBuffers-Swift: 948824656ef9f507348481655d409628b0219be0
 
-PODFILE CHECKSUM: 04c09f57477bf71aa1de60b7066b14a677ab7a53
+PODFILE CHECKSUM: eed7162ca7343474b1ebb83552680d7ad0b755b7
 
 COCOAPODS: 1.0.1
