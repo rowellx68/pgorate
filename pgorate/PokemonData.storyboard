@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lTb-UD-ChF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Pokemon Data Table View Controller-->
@@ -13,13 +14,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PokeCell" id="mZN-rc-RWr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pokeCell" id="mZN-rc-RWr" customClass="PokemonTableViewCell" customModule="PokéRate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZN-rc-RWr" id="i5H-WP-NpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="yV9-ie-fVG">
+                                            <rect key="frame" x="20" y="6" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="3p5-h9-P9U"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragonite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Mp-2ie">
+                                            <rect key="frame" x="60" y="11" width="449" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-SX-VkM">
+                                            <rect key="frame" x="517" y="11" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="EIm-oZ-6Ty"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="leading" secondItem="xcU-Mp-2ie" secondAttribute="trailing" constant="8" symbolic="YES" id="BcD-j3-AfE"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="xcU-Mp-2ie" secondAttribute="centerY" id="FpQ-Xp-cyN"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="baseline" secondItem="3Fd-SX-VkM" secondAttribute="baseline" id="KEC-3O-Efn"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="leading" secondItem="i5H-WP-NpS" secondAttribute="leadingMargin" constant="12" id="U9g-BT-6yB"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="i5H-WP-NpS" secondAttribute="centerY" id="glr-jw-fSx"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="yV9-ie-fVG" secondAttribute="trailing" constant="8" symbolic="YES" id="l6O-Qv-2FO"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="-2" id="mLE-yG-2fZ"/>
+                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="trailing" secondItem="i5H-WP-NpS" secondAttribute="trailingMargin" id="ntP-bf-tTU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="xcU-Mp-2ie" id="lKn-ah-Gqp"/>
+                                    <outlet property="percent" destination="3Fd-SX-VkM" id="Unq-EF-BbK"/>
+                                    <outlet property="pokeImage" destination="yV9-ie-fVG" id="Drn-1u-zxy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,4 +95,7 @@
             <point key="canvasLocation" x="318" y="257"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="149" width="80" height="80"/>
+    </resources>
 </document>

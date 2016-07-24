@@ -16,7 +16,8 @@ class PokemonDataViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rootViewController = PokemonDataTableViewController()
+        let rootViewController = self.topViewController as! PokemonDataTableViewController
+        
         rootViewController.playerData = playerData
         rootViewController.inventoryItems = filterPokemonFromInventory(inventoryItems)
         
