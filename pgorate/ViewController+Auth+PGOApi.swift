@@ -52,6 +52,6 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
         button.disabled = false
         button.reload()
         
-        showAlert("Oops", message: "The API encountered an error. Error code: \(statusCode)")
+        showAlert("Oops", message: "An error occured. The server might be down. Try again later.")
     }
 }
