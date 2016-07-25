@@ -18,7 +18,6 @@ class ViewController: FormViewController {
         super.viewDidLoad()
         
         createForm()
-        Auth.sharedInstance.delegate = self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -62,6 +61,7 @@ class ViewController: FormViewController {
         let password = form.rowByTag("password") as! PasswordRow
         
         if username.value != nil && password.value != nil {
+            Auth.sharedInstance.delegate = self
             Auth.sharedInstance.login(username.value!, password: password.value!)
             addActivityIndicator()
             disableInput(withCondition: true)

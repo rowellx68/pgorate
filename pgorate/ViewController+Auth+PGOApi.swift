@@ -30,19 +30,25 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
             request.getInventory()
             request.makeRequest(.GetMapObjects, delegate: self)
         } else if (intent == .GetMapObjects) {
-            let player = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetPlayerResponse
-            let inventory = response.subresponses[1] as! Pogoprotos.Networking.Responses.GetInventoryResponse
-            
-            if player.hasPlayerData {
-                playerData = player.playerData
+            if response.subresponses.count == 2 {
+                let player = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetPlayerResponse
+                let inventory = response.subresponses[1] as! Pogoprotos.Networking.Responses.GetInventoryResponse
+                
+                if player.hasPlayerData {
+                    playerData = player.playerData
+                }
+                
+                if inventory.hasInventoryDelta {
+                    inventoryItems = inventory.inventoryDelta.inventoryItems
+                }
+                
+                removeActivityIndicator()
+                performSegueWithIdentifier("showPokemonListSegue", sender: nil)
+            } else {
+                disableInput(withCondition: false)
+                removeActivityIndicator()
+                showAlert("Oops", message: "An error occured. We didn't receive enough data from the server. It might be experiencing some issues.")
             }
-            
-            if inventory.hasInventoryDelta {
-                inventoryItems = inventory.inventoryDelta.inventoryItems
-            }
-            
-            removeActivityIndicator()
-            performSegueWithIdentifier("showPokemonListSegue", sender: nil)
         }
     }
     
