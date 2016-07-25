@@ -480,7 +480,7 @@
 				INFOPLIST_FILE = pgorate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.rowell.pgorate;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.heria.rowell.pgorate;
 				PRODUCT_NAME = "PokéRate";
 			};
 			name = Debug;
@@ -493,7 +493,7 @@
 				INFOPLIST_FILE = pgorate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.rowell.pgorate;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.heria.rowell.pgorate;
 				PRODUCT_NAME = "PokéRate";
 			};
 			name = Release;

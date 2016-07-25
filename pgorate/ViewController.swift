@@ -58,14 +58,13 @@ class ViewController: FormViewController {
     }
     
     func validateAndGetCredentials() {
-        let button = form.rowByTag("btn_login") as! ButtonRow
         let username = form.rowByTag("ptc_username") as! TextRow
         let password = form.rowByTag("password") as! PasswordRow
         
         if username.value != nil && password.value != nil {
             Auth.sharedInstance.login(username.value!, password: password.value!)
-            button.disabled = true
-            button.reload()
+            
+            disableInput(withCondition: true)
         } else {
             showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
         }
@@ -76,6 +75,23 @@ class ViewController: FormViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func disableInput(withCondition condition: Condition = true) {
+        let button = form.rowByTag("btn_login") as! ButtonRow
+        let username = form.rowByTag("ptc_username") as! TextRow
+        let password = form.rowByTag("password") as! PasswordRow
+        let account = form.rowByTag("acc_type") as! SegmentedRow<String>
+        
+        username.disabled = condition
+        password.disabled = condition
+        button.disabled = condition
+        account.disabled = condition
+        
+        username.evaluateDisabled()
+        password.evaluateDisabled()
+        button.evaluateDisabled()
+        account.evaluateDisabled()
     }
 }
 
