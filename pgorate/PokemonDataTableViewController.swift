@@ -15,7 +15,7 @@ class PokemonDataTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "player name"
+        self.navigationItem.title = playerData.username
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,9 +26,11 @@ class PokemonDataTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("pokeCell") as! PokemonTableViewCell!
         let pokeData = inventoryItems[indexPath.row].inventoryItemData!.pokemonData
         
+        let overall = Float(pokeData.individualAttack + pokeData.individualStamina + pokeData.individualDefense)/45.0
+        
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
         cell.name.text = pokeData.pokemonId.toString()
-        cell.percent.text = ""
+        cell.percent.text = "\(String(format: "%.1f", overall * 100))%"
         
         return cell
     }
