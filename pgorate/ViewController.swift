@@ -63,7 +63,7 @@ class ViewController: FormViewController {
         
         if username.value != nil && password.value != nil {
             Auth.sharedInstance.login(username.value!, password: password.value!)
-            
+            addActivityIndicator()
             disableInput(withCondition: true)
         } else {
             showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
@@ -92,6 +92,20 @@ class ViewController: FormViewController {
         password.evaluateDisabled()
         button.evaluateDisabled()
         account.evaluateDisabled()
+    }
+    
+    func addActivityIndicator() {
+        let button = UIBarButtonItem()
+        let activityIndicator = UIActivityIndicatorView()
+        
+        activityIndicator.startAnimating()
+        button.customView = activityIndicator
+        
+        navigationItem.setRightBarButtonItem(button, animated: true)
+    }
+    
+    func removeActivityIndicator() {
+        navigationItem.setRightBarButtonItem(nil, animated: true)
     }
 }
 

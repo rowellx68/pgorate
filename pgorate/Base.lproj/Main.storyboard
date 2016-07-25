@@ -29,8 +29,8 @@
         <!--PokemonData-->
         <scene sceneID="NhI-mD-R3h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gmD-lk-R2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="PokemonData" id="YuS-Xc-5Ak" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmD-lk-R2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1622.5" y="131"/>
         </scene>

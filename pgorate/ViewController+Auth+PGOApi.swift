@@ -18,6 +18,7 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
     
     func didNotReceiveAuth() {
         disableInput(withCondition: false)
+        removeActivityIndicator()
         showAlert("Login Failed", message: "Please check your credentials and try again.")
     }
     
@@ -40,12 +41,14 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
                 inventoryItems = inventory.inventoryDelta.inventoryItems
             }
             
+            removeActivityIndicator()
             performSegueWithIdentifier("showPokemonListSegue", sender: nil)
         }
     }
     
     func didReceiveApiError(intent: ApiIntent, statusCode: Int?) {
         disableInput(withCondition: false)
-        showAlert("Oops", message: "An error occured. The server might be down. Try again later.")
+        removeActivityIndicator()
+        showAlert("Oops", message: "An error occured. The login or game servers might be down. Try again later.")
     }
 }
