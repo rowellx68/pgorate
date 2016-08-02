@@ -40,10 +40,26 @@ class ViewController: FormViewController {
         +++ Section("Credentials")
             <<< TextRow("ptc_username") {
                 $0.title = "Username"
+                $0.hidden = Condition.Function(["acc_type"], { (form) -> Bool in
+                    let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
+                    
+                    return accountType.value! == "Google"
+                })
         }.cellSetup({ (cell, row) in
             cell.textField.autocapitalizationType = .None
             cell.textField.autocorrectionType = .No
         })
+            <<< TextRow("google_username") {
+                $0.title = "Email"
+                $0.hidden = Condition.Function(["acc_type"], { (form) -> Bool in
+                    let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
+                    
+                    return accountType.value! == "Pokémon Trainer Club"
+                })
+                }.cellSetup({ (cell, row) in
+                    cell.textField.autocapitalizationType = .None
+                    cell.textField.autocorrectionType = .No
+                })
             <<< PasswordRow("password") {
                 $0.title = "Password"
         }
@@ -57,16 +73,29 @@ class ViewController: FormViewController {
     }
     
     func validateAndGetCredentials() {
+        let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
         let username = form.rowByTag("ptc_username") as! TextRow
+        let email = form.rowByTag("google_username") as! TextRow
         let password = form.rowByTag("password") as! PasswordRow
         
-        if username.value != nil && password.value != nil {
-            Auth.sharedInstance.delegate = self
-            Auth.sharedInstance.login(username.value!, password: password.value!)
-            addActivityIndicator()
-            disableInput(withCondition: true)
+        if accountType.value! != "Google" {
+            if username.value != nil && password.value != nil {
+                Auth.sharedInstance.delegate = self
+                Auth.sharedInstance.login(username.value!, password: password.value!, provider: AuthType.Ptc)
+                addActivityIndicator()
+                disableInput(withCondition: true)
+            } else {
+                showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
+            }
         } else {
-            showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
+            if email.value != nil && password.value != nil {
+                Auth.sharedInstance.delegate = self
+                Auth.sharedInstance.login(email.value!, password: password.value!, provider: AuthType.Google)
+                addActivityIndicator()
+                disableInput(withCondition: true)
+            } else {
+                showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
+            }
         }
     }
     
