@@ -24,7 +24,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="yV9-ie-fVG">
                                             <rect key="frame" x="20" y="6" width="32" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="32" id="mnY-vs-coi"/>
+                                                <constraint firstAttribute="width" constant="32" id="YTK-g3-Uux"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragonite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Mp-2ie">
@@ -36,7 +36,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-SX-VkM">
                                             <rect key="frame" x="491" y="11" width="68" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="68" id="BWS-OY-8zZ"/>
+                                                <constraint firstAttribute="width" constant="68" id="KOc-1Q-s1W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,15 +44,15 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="-2" id="5uP-vu-ukK"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="i5H-WP-NpS" secondAttribute="centerY" id="Gcd-Wm-nKI"/>
-                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="top" secondItem="3Fd-SX-VkM" secondAttribute="top" id="Ipd-tk-uuB"/>
-                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="yV9-ie-fVG" secondAttribute="trailing" constant="8" symbolic="YES" id="JjT-ZP-Oir"/>
-                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="trailing" secondItem="i5H-WP-NpS" secondAttribute="trailingMargin" id="aWX-4k-obr"/>
-                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="bottom" secondItem="3Fd-SX-VkM" secondAttribute="bottom" id="bKT-Kq-88Y"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="xcU-Mp-2ie" secondAttribute="centerY" id="iWE-LK-5gt"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="leading" secondItem="i5H-WP-NpS" secondAttribute="leadingMargin" constant="12" id="j7g-dZ-dxM"/>
-                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="leading" secondItem="xcU-Mp-2ie" secondAttribute="trailing" constant="8" symbolic="YES" id="vhm-aa-gzD"/>
+                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="leading" secondItem="xcU-Mp-2ie" secondAttribute="trailing" constant="8" symbolic="YES" id="4Kl-Bb-jvl"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="yV9-ie-fVG" secondAttribute="trailing" constant="8" symbolic="YES" id="GiR-Yp-WG6"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="i5H-WP-NpS" secondAttribute="centerY" id="L2a-rW-gXj"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="top" secondItem="3Fd-SX-VkM" secondAttribute="top" id="Yq6-R5-r1T"/>
+                                        <constraint firstItem="3Fd-SX-VkM" firstAttribute="trailing" secondItem="i5H-WP-NpS" secondAttribute="trailingMargin" id="Z9h-Jo-tkh"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="leading" secondItem="i5H-WP-NpS" secondAttribute="leadingMargin" constant="12" id="oLg-0F-irz"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="xcU-Mp-2ie" secondAttribute="centerY" id="rFi-qj-u2X"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="bottom" secondItem="3Fd-SX-VkM" secondAttribute="bottom" id="zMR-Xq-2Tv"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="-2" id="zwv-pZ-T9P"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
