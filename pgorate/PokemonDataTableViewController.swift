@@ -29,7 +29,7 @@ class PokemonDataTableViewController: UITableViewController {
         let overall = Float(pokeData.individualAttack + pokeData.individualStamina + pokeData.individualDefense)/45.0
         
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
-        cell.name.text = pokeData.pokemonId.toString()
+        cell.name.text = pokeData.pokemonId.description.stringByReplacingOccurrencesOfString(".", withString: "")
         cell.percent.text = "\(String(format: "%.2f", overall * 100))%"
         
         return cell
