@@ -9,7 +9,7 @@ Using the initial implementation of the Pokémon GO API on Swift by [Luke Sapan]
 ### To Do
 
 - [x] Pokémon Trainer Club login
-- [ ] Google login
+- [x] Google login
 - [x] Show Pokémon
 - [ ] Display Pokémon full details
-- [ ] Calculate %
+- [x] Calculate %
