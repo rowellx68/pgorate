@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ProtocolBuffers-Swift:
-    :commit: c7f577b5f4921abd1fca2740e89f7f85725f62a4
+    :commit: f43bcfe55f7c2b19f19363c12d9499dac232f3ae
     :git: https://github.com/alexeyxo/protobuf-swift
 
 SPEC CHECKSUMS:

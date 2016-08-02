@@ -18,40 +18,48 @@ class Auth {
     var expires: String?
     var loggedIn: Bool = false
     var delegate: AuthDelegate?
-    var provider: String!
 
-    func login(username:String, password:String) {
-        //print("Starting login...")
-        self.username = username
-        self.password = password
-        self.provider = "ptc"
+    func login(username:String, password:String, provider:String) {
+        print("Starting login...")
+        if (provider == "google") {
+            print("Attempting to get Google token...")
+            Endpoint.LoginProvider = "google"
+            gpsoauth.sharedInstance.getTicket(username, password: password)
+        } else if (provider == "ptc") {
+            print("Logging in using PTC...")
+            Endpoint.LoginProvider = "ptc"
+            self.username = username
+            self.password = password
 
-        // Disable redirects
-        let delegate = Alamofire.Manager.sharedInstance.delegate
-        delegate.taskWillPerformHTTPRedirection = { session, task, response, request in
-            return nil
-        }
+            // Disable redirects
+            let delegate = Alamofire.Manager.sharedInstance.delegate
+            delegate.taskWillPerformHTTPRedirection = { session, task, response, request in
+                return nil
+            }
 
-        // Add "niantic" as the User-Agent
-        let manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "User-Agent": "niantic"
-        ]
+            // Add "niantic" as the User-Agent
+            let manager = Manager.sharedInstance
+            manager.session.configuration.HTTPAdditionalHeaders = [
+                "User-Agent": "niantic"
+            ]
 
-        // Request login info
-        Alamofire.request(.GET, Endpoint.LoginInfo)
-            .responseJSON { response in
-                if let JSON = response.result.value {
-                    let lt = JSON["lt"] as! String
-                    let execution = JSON["execution"] as! String
-                    //print("Got login information!\nlt: \(lt)\nexecution: \(execution)")
-                    self.getTicket(lt, execution: execution)
-                }
+            // Request login info
+            Alamofire.request(.GET, Endpoint.LoginInfo)
+                .responseJSON { response in
+                    if let JSON = response.result.value {
+                        let lt = JSON["lt"] as! String
+                        let execution = JSON["execution"] as! String
+                        print("Got login information!\nlt: \(lt)\nexecution: \(execution)")
+                        self.getTicket(lt, execution: execution)
+                    }
+            }
+        } else {
+            print("Error: Invalid login provider. Must be 'ptc' or 'google'")
         }
     }
 
     func getTicket(lt: String, execution: String) {
-        //print("Requesting ticket...")
+        print("Requesting ticket...")
 
         let parameters = [
             "lt": lt,
@@ -66,7 +74,7 @@ class Auth {
                 if let location = response.response!.allHeaderFields["Location"] as? String {
                     let ticketRange = location.rangeOfString("?ticket=")
                     let ticket = String(location.characters.suffixFrom(ticketRange!.endIndex))
-                    //print("Got ticket: \(ticket)")
+                    print("Got ticket: \(ticket)")
                     self.loginOauth(ticket)
                 } else {
                     self.delegate?.didNotReceiveAuth()
@@ -106,7 +114,7 @@ class Auth {
                 self.expires = value.substringWithRange(eSwiftRange)
 
                 self.loggedIn = true
-                //print("Login successful!\nAccess token: \(self.accessToken)")
+                print("Login successful!\nAccess token: \(self.accessToken)")
                 self.delegate?.didReceiveAuth()
             }
     }

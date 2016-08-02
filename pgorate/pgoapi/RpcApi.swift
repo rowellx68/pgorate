@@ -58,18 +58,26 @@ class RpcApi {
         let requestBuilder = Pogoprotos.Networking.Envelopes.RequestEnvelope.Builder()
         requestBuilder.statusCode = 2
         requestBuilder.requestId = Api.id
-        requestBuilder.unknown12 = 989
+        requestBuilder.unknown12 = 1431
 
-        // TODO: Add playerPosition if it is available
-        // requestBuilder.latitude = location.latitude
-        // requestBuilder.longitude = location.longitude
-        // requestBuilder.altitude = location.altitude
+        requestBuilder.latitude = Location.lat
+        requestBuilder.longitude = Location.long
+        requestBuilder.altitude = Location.alt
 
-        let authInfoBuilder = requestBuilder.getAuthInfoBuilder()
-        authInfoBuilder.provider = Auth.sharedInstance.provider
-        let authInfoTokenBuilder = authInfoBuilder.getTokenBuilder()
-        authInfoTokenBuilder.contents = Auth.sharedInstance.accessToken!
-        authInfoTokenBuilder.unknown2 = 59
+        if (!Api.receivedToken) {
+            let authInfoBuilder = requestBuilder.getAuthInfoBuilder()
+            let authInfoTokenBuilder = authInfoBuilder.getTokenBuilder()
+            if (Endpoint.LoginProvider == "google") {
+                authInfoBuilder.provider = "google"
+                authInfoTokenBuilder.contents = gpsoauth.sharedInstance.accessToken
+            } else {
+                authInfoBuilder.provider = "ptc"
+                authInfoTokenBuilder.contents = Auth.sharedInstance.accessToken!
+            }
+            authInfoTokenBuilder.unknown2 = 10800
+        } else {
+            requestBuilder.authTicket = Api.authToken
+        }
 
         print("Generating subrequests...")
         for subrequest in subrequests {
