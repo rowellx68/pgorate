@@ -35,9 +35,7 @@ class PokemonDataTableViewController: UITableViewController {
         }
         
         if !pokeData.hasFavorite {
-            cell.favourite = nil
-        } else {
-            cell.favourite?.image = UIImage(named: "fave")
+            cell.favourite?.hidden = true
         }
         
         return cell
