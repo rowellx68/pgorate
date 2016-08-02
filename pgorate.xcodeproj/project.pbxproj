@@ -48,6 +48,7 @@
 		DDA6C8871D4525CC00625073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8861D4525CC00625073 /* Assets.xcassets */; };
 		DDA6C88A1D4525CC00625073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8881D4525CC00625073 /* LaunchScreen.storyboard */; };
 		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
+		DDBE96181D50D3D0004A30EB /* PtcOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE96171D50D3D0004A30EB /* PtcOAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		DDA6C8891D4525CC00625073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA6C88B1D4525CC00625073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
+		DDBE96171D50D3D0004A30EB /* PtcOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PtcOAuth.swift; path = pgoapi/PtcOAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		DD41F91B1D45282B005E9705 /* pgoapi */ = {
 			isa = PBXGroup;
 			children = (
+				DDBE96171D50D3D0004A30EB /* PtcOAuth.swift */,
 				DD1CCCB41D50AF6C00E90F59 /* GPSOAuth.swift */,
 				DD41F90B1D452821005E9705 /* Auth.swift */,
 				DD41F90C1D452821005E9705 /* AuthDelegate.swift */,
@@ -339,6 +342,7 @@
 				DD0A437C1D456035005A8A24 /* PokemonDataTableViewController.swift in Sources */,
 				DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
+				DDBE96181D50D3D0004A30EB /* PtcOAuth.swift in Sources */,
 				DD41F93D1D452837005E9705 /* Pogoprotos.Networking.Envelopes.PogoprotosNetworkingEnvelopes.proto.swift in Sources */,
 				DD0A43801D456B1C005A8A24 /* PokemonTableViewCell.swift in Sources */,
 				DD41F91A1D452821005E9705 /* S2Geometry.swift in Sources */,

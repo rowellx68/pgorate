@@ -8,7 +8,6 @@
 //  Copyright © 2016 Coadstal. All rights reserved.
 //
 
-
 import Foundation
 import ProtocolBuffers
 
@@ -88,13 +87,13 @@ class PGoApiRequest {
         }))
     }
 
-    func getMapObjects() {
+    func getMapObjects(latitude: Double, longitude: Double) {
         let messageBuilder = Pogoprotos.Networking.Requests.Messages.GetMapObjectsMessage.Builder()
-        messageBuilder.latitude = Location.lat
-        messageBuilder.longitude = Location.long
+        messageBuilder.latitude = latitude
+        messageBuilder.longitude = longitude
         messageBuilder.sinceTimestampMs = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         
-        let cell = S2CellId(p: S2LatLon(latDegrees: Location.lat, lonDegrees: Location.long).toPoint())
+        let cell = S2CellId(p: S2LatLon(latDegrees: latitude, lonDegrees: longitude).toPoint())
         var cells: [UInt64] = []
         
         var currentCell = cell
