@@ -49,7 +49,7 @@ class ViewController: FormViewController {
             cell.textField.autocapitalizationType = .None
             cell.textField.autocorrectionType = .No
         })
-            <<< TextRow("google_username") {
+            <<< EmailRow("google_username") {
                 $0.title = "Email"
                 $0.hidden = Condition.Function(["acc_type"], { (form) -> Bool in
                     let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
@@ -75,7 +75,7 @@ class ViewController: FormViewController {
     func validateAndGetCredentials() {
         let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
         let username = form.rowByTag("ptc_username") as! TextRow
-        let email = form.rowByTag("google_username") as! TextRow
+        let email = form.rowByTag("google_username") as! EmailRow
         let password = form.rowByTag("password") as! PasswordRow
         
         if accountType.value! != "Google" {
