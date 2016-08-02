@@ -14,6 +14,7 @@ struct Endpoint {
     static let LoginOAuth = "https://sso.pokemon.com/sso/oauth2.0/accessToken"
     static var LoginProvider = ""
     static let Rpc = "https://pgorelease.nianticlabs.com/plfe/rpc"
+    static let GoogleLogin = "https://android.clients.google.com/auth"
 }
 
 struct Location {
@@ -33,4 +34,9 @@ struct Api {
 enum ApiIntent {
     case Login
     case GetMapObjects
+}
+
+enum AuthType: String {
+    case Google = "google"
+    case Ptc = "ptc"
 }

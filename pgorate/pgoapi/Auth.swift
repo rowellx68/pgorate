@@ -19,15 +19,15 @@ class Auth {
     var loggedIn: Bool = false
     var delegate: AuthDelegate?
 
-    func login(username:String, password:String, provider:String) {
+    func login(username:String, password:String, provider:AuthType) {
         print("Starting login...")
-        if (provider == "google") {
+        if (provider == AuthType.Google) {
             print("Attempting to get Google token...")
-            Endpoint.LoginProvider = "google"
-            gpsoauth.sharedInstance.getTicket(username, password: password)
-        } else if (provider == "ptc") {
+            Endpoint.LoginProvider = AuthType.Google.rawValue
+            GPSOAuth.sharedInstance.getTicket(username, password: password)
+        } else if (provider == AuthType.Ptc) {
             print("Logging in using PTC...")
-            Endpoint.LoginProvider = "ptc"
+            Endpoint.LoginProvider = AuthType.Ptc.rawValue
             self.username = username
             self.password = password
 

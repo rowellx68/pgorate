@@ -69,7 +69,7 @@ class RpcApi {
             let authInfoTokenBuilder = authInfoBuilder.getTokenBuilder()
             if (Endpoint.LoginProvider == "google") {
                 authInfoBuilder.provider = "google"
-                authInfoTokenBuilder.contents = gpsoauth.sharedInstance.accessToken
+                authInfoTokenBuilder.contents = GPSOAuth.sharedInstance.accessToken!
             } else {
                 authInfoBuilder.provider = "ptc"
                 authInfoTokenBuilder.contents = Auth.sharedInstance.accessToken!
