@@ -12,7 +12,7 @@
 		DD0A437C1D456035005A8A24 /* PokemonDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A437B1D456035005A8A24 /* PokemonDataTableViewController.swift */; };
 		DD0A437E1D45637A005A8A24 /* PokemonDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A437D1D45637A005A8A24 /* PokemonDataViewController.swift */; };
 		DD0A43801D456B1C005A8A24 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A437F1D456B1C005A8A24 /* PokemonTableViewCell.swift */; };
-		DD1CCCAD1D50A05300E90F59 /* gpsoauth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCCAC1D50A05300E90F59 /* gpsoauth.swift */; };
+		DD1CCCB51D50AF6C00E90F59 /* GPSOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCCB41D50AF6C00E90F59 /* GPSOAuth.swift */; };
 		DD41F9131D452821005E9705 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90B1D452821005E9705 /* Auth.swift */; };
 		DD41F9141D452821005E9705 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90C1D452821005E9705 /* AuthDelegate.swift */; };
 		DD41F9151D452821005E9705 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD41F90D1D452821005E9705 /* Extensions.swift */; };
@@ -58,7 +58,7 @@
 		DD0A437B1D456035005A8A24 /* PokemonDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDataTableViewController.swift; sourceTree = "<group>"; };
 		DD0A437D1D45637A005A8A24 /* PokemonDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDataViewController.swift; sourceTree = "<group>"; };
 		DD0A437F1D456B1C005A8A24 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
-		DD1CCCAC1D50A05300E90F59 /* gpsoauth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gpsoauth.swift; path = pgoapi/gpsoauth.swift; sourceTree = "<group>"; };
+		DD1CCCB41D50AF6C00E90F59 /* GPSOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPSOAuth.swift; path = pgoapi/GPSOAuth.swift; sourceTree = "<group>"; };
 		DD41F90B1D452821005E9705 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = pgoapi/Auth.swift; sourceTree = "<group>"; };
 		DD41F90C1D452821005E9705 /* AuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDelegate.swift; path = pgoapi/AuthDelegate.swift; sourceTree = "<group>"; };
 		DD41F90D1D452821005E9705 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = pgoapi/Extensions.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		DD41F91B1D45282B005E9705 /* pgoapi */ = {
 			isa = PBXGroup;
 			children = (
-				DD1CCCAC1D50A05300E90F59 /* gpsoauth.swift */,
+				DD1CCCB41D50AF6C00E90F59 /* GPSOAuth.swift */,
 				DD41F90B1D452821005E9705 /* Auth.swift */,
 				DD41F90C1D452821005E9705 /* AuthDelegate.swift */,
 				DD41F90D1D452821005E9705 /* Extensions.swift */,
@@ -336,7 +336,6 @@
 				DD41F9351D452837005E9705 /* Pogoprotos.Data.Player.PogoprotosDataPlayer.proto.swift in Sources */,
 				DD41F9151D452821005E9705 /* Extensions.swift in Sources */,
 				DD41F9411D452837005E9705 /* Pogoprotos.Settings.Master.Item.PogoprotosSettingsMasterItem.proto.swift in Sources */,
-				DD1CCCAD1D50A05300E90F59 /* gpsoauth.swift in Sources */,
 				DD0A437C1D456035005A8A24 /* PokemonDataTableViewController.swift in Sources */,
 				DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
@@ -356,6 +355,7 @@
 				DD41F93F1D452837005E9705 /* Pogoprotos.Networking.Requests.PogoprotosNetworkingRequests.proto.swift in Sources */,
 				DD41F9141D452821005E9705 /* AuthDelegate.swift in Sources */,
 				DD41F9431D452837005E9705 /* Pogoprotos.Settings.Master.Pokemon.PogoprotosSettingsMasterPokemon.proto.swift in Sources */,
+				DD1CCCB51D50AF6C00E90F59 /* GPSOAuth.swift in Sources */,
 				DD41F9391D452837005E9705 /* Pogoprotos.Inventory.PogoprotosInventory.proto.swift in Sources */,
 				DD41F9321D452837005E9705 /* Pogoprotos.Data.Capture.PogoprotosDataCapture.proto.swift in Sources */,
 				DD41F9381D452837005E9705 /* Pogoprotos.Inventory.Item.PogoprotosInventoryItem.proto.swift in Sources */,
