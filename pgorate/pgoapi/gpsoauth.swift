@@ -54,13 +54,12 @@ class GPSOAuth {
         Alamofire.request(.POST, Endpoint.GoogleLogin, parameters: params, headers: headers, encoding: .URLEncodedInURL)
         .responseJSON { (response) in
             let responseString = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-//            print(responseString)
             let googleDict = self.parseKeyValues(responseString! as String)
             
             if googleDict["Token"] != nil {
                 self.loginOAuth(googleDict["Token"]!)
             } else {
-                Auth.sharedInstance.delegate?.didNotReceiveAuth()
+                Auth.sharedInstance.delegate?.didNotReceiveAuthGoogle()
             }
         }
     }

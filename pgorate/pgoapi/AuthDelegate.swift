@@ -12,4 +12,5 @@ import Foundation
 protocol AuthDelegate {
     func didReceiveAuth()
     func didNotReceiveAuth()
+    func didNotReceiveAuthGoogle()
 }

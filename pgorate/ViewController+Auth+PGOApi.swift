@@ -22,6 +22,12 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
         showAlert("Login Failed", message: "Please check your credentials and try again.")
     }
     
+    func didNotReceiveAuthGoogle() {
+        disableInput(withCondition: false)
+        removeActivityIndicator()
+        showAlert("Login Failed", message: "Please check your credentials and try again.\n\nIf you have enabled 2FA for your account, create an app specific password.")
+    }
+    
     func didReceiveApiResponse(intent: ApiIntent, response: ApiResponse) {
         if (intent == .Login) {
             Api.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
