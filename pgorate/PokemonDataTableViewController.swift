@@ -26,15 +26,18 @@ class PokemonDataTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("pokeCell") as! PokemonTableViewCell!
         let pokeData = inventoryItems[indexPath.row].inventoryItemData!.pokemonData
         
-        let overall = Float(pokeData.individualAttack + pokeData.individualStamina + pokeData.individualDefense)/45.0
-        
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
-        cell.percent.text = "\(String(format: "%.2f", overall * 100))%"
         
         if pokeData.hasNickname {
             cell.name.text = pokeData.nickname
         } else {
             cell.name.text = pokeData.pokemonId.description.stringByReplacingOccurrencesOfString(".", withString: "")
+        }
+        
+        if !pokeData.hasFavorite {
+            cell.favourite = nil
+        } else {
+            cell.favourite?.image = UIImage(named: "fave")
         }
         
         return cell
