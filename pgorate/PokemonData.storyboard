@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZN-rc-RWr" id="i5H-WP-NpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="yV9-ie-fVG">
@@ -64,20 +64,46 @@
                             <outlet property="delegate" destination="lXN-7g-b0P" id="zBg-Gr-OhA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Dub-OP-yay"/>
+                    <navigationItem key="navigationItem" id="Dub-OP-yay">
+                        <barButtonItem key="leftBarButtonItem" image="settings_filled" id="Q9D-rr-dNc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="YZk-Fb-ZTe" kind="show" id="5K3-2Q-jRD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhT-5s-9p6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1130" y="257"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1Mx-1h-y71">
+            <objects>
+                <viewController id="YZk-Fb-ZTe" customClass="SettingsViewController" customModule="PokéRate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DgH-Vl-gKD"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9z-yN-WBc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lGN-Kx-hbY">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYq-jX-YIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="1064"/>
         </scene>
         <!--Pokemon Data View Controller-->
         <scene sceneID="cIB-0g-Fn7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lTb-UD-ChF" customClass="PokemonDataViewController" customModule="PokéRate" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="MZH-Bh-iw8">
+                    <navigationBar key="navigationBar" alpha="0.80000000000000004" contentMode="scaleToFill" barStyle="black" translucent="NO" id="MZH-Bh-iw8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -96,5 +122,6 @@
     <resources>
         <image name="149" width="80" height="80"/>
         <image name="fave" width="26" height="26"/>
+        <image name="settings_filled" width="22" height="22"/>
     </resources>
 </document>
