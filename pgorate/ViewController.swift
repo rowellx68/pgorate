@@ -56,6 +56,7 @@ class ViewController: FormViewController {
         +++ Section("Credentials")
             <<< TextRow("ptc_username") {
                 $0.title = "Username"
+                $0.value = Defaults[.ptcUsername]
                 $0.hidden = Condition.Function(["acc_type"], { (form) -> Bool in
                     let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
                     
@@ -67,6 +68,7 @@ class ViewController: FormViewController {
         })
             <<< EmailRow("google_username") {
                 $0.title = "Email"
+                $0.value = Defaults[.googleUsername]
                 $0.hidden = Condition.Function(["acc_type"], { (form) -> Bool in
                     let accountType = form.rowByTag("acc_type") as! SegmentedRow<String>
                     
@@ -79,6 +81,10 @@ class ViewController: FormViewController {
             <<< PasswordRow("password") {
                 $0.title = "Password"
         }
+            <<< SwitchRow("remember") {
+                $0.title = "Remember Me"
+                $0.value = false
+            }
         
             +++ Section(header: "", footer: "Use at your own risk. Don't cry if Niantic bans you.")
             <<< ButtonRow("btn_login") {
@@ -93,6 +99,8 @@ class ViewController: FormViewController {
         let username = form.rowByTag("ptc_username") as! TextRow
         let email = form.rowByTag("google_username") as! EmailRow
         let password = form.rowByTag("password") as! PasswordRow
+        
+        let rememberMe = form.rowByTag("remember") as! SwitchRow
         
         if accountType.value! != "Google" {
             if username.value != nil && password.value != nil {
@@ -119,6 +127,11 @@ class ViewController: FormViewController {
                 showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
             }
         }
+        
+        if rememberMe.value! {
+            Defaults[.ptcUsername] = username.value
+            Defaults[.googleUsername] = email.value
+        }
     }
     
     func showAlert(title: String, message: String) {
@@ -133,16 +146,22 @@ class ViewController: FormViewController {
         let username = form.rowByTag("ptc_username") as! TextRow
         let password = form.rowByTag("password") as! PasswordRow
         let account = form.rowByTag("acc_type") as! SegmentedRow<String>
+        let email = form.rowByTag("google_username") as! EmailRow
+        let rememberMe = form.rowByTag("remember") as! SwitchRow
         
         username.disabled = condition
         password.disabled = condition
         button.disabled = condition
         account.disabled = condition
+        email.disabled = condition
+        rememberMe.disabled = condition
         
         username.evaluateDisabled()
         password.evaluateDisabled()
         button.evaluateDisabled()
         account.evaluateDisabled()
+        email.evaluateDisabled()
+        rememberMe.evaluateDisabled()
     }
     
     func addActivityIndicator() {
