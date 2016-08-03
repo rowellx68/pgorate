@@ -36,6 +36,9 @@ class PokemonDataTableViewController: UITableViewController {
         
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
         
+        cell.cp.text = "CP: \(pokeData.cp)"
+        cell.iv.text = "IV: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
+        
         if pokeData.hasNickname && Defaults[.showNick] {
             cell.name.text = pokeData.nickname
         } else {

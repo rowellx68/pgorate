@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lTb-UD-ChF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -9,51 +10,76 @@
         <scene sceneID="NuV-Eu-oVw">
             <objects>
                 <tableViewController id="lXN-7g-b0P" customClass="PokemonDataTableViewController" customModule="PokéRate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fkr-Rf-1dU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="fkr-Rf-1dU">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pokeCell" id="mZN-rc-RWr" customClass="PokemonTableViewCell" customModule="PokéRate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pokeCell" rowHeight="57" id="mZN-rc-RWr" customClass="PokemonTableViewCell" customModule="PokéRate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZN-rc-RWr" id="i5H-WP-NpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="149" translatesAutoresizingMaskIntoConstraints="NO" id="yV9-ie-fVG">
-                                            <rect key="frame" x="20" y="6" width="32" height="32"/>
+                                            <rect key="frame" x="20" y="13" width="32" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="32" id="YTK-g3-Uux"/>
+                                                <constraint firstAttribute="width" constant="32" id="Scd-lJ-PWa"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragonite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Mp-2ie">
-                                            <rect key="frame" x="60" y="11" width="423" height="21"/>
+                                            <rect key="frame" x="60" y="8" width="423" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fave" translatesAutoresizingMaskIntoConstraints="NO" id="37U-da-Jge">
-                                            <rect key="frame" x="541" y="9" width="26" height="26"/>
+                                            <rect key="frame" x="541" y="16" width="26" height="26"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="26" id="v5d-PQ-7nc"/>
+                                                <constraint firstAttribute="width" constant="26" id="CIi-Iy-21o"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CP: 1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljU-lZ-KGJ">
+                                            <rect key="frame" x="60" y="27" width="89" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="89" id="sGI-26-sGO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IV: 15/15/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7p-3J-Lme">
+                                            <rect key="frame" x="157" y="27" width="89" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="89" id="JKc-lb-ymR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="37U-da-Jge" firstAttribute="leading" secondItem="xcU-Mp-2ie" secondAttribute="trailing" constant="58" id="57F-XK-1oK"/>
-                                        <constraint firstItem="37U-da-Jge" firstAttribute="centerY" secondItem="xcU-Mp-2ie" secondAttribute="centerY" id="9Kd-eW-CqG"/>
-                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="yV9-ie-fVG" secondAttribute="trailing" constant="8" symbolic="YES" id="GiR-Yp-WG6"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="i5H-WP-NpS" secondAttribute="centerY" id="L2a-rW-gXj"/>
-                                        <constraint firstItem="37U-da-Jge" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="1" id="gWO-99-Sok"/>
-                                        <constraint firstAttribute="trailing" secondItem="37U-da-Jge" secondAttribute="trailing" id="lzU-jV-0Pl"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="leading" secondItem="i5H-WP-NpS" secondAttribute="leadingMargin" constant="12" id="oLg-0F-irz"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="xcU-Mp-2ie" secondAttribute="centerY" id="rFi-qj-u2X"/>
-                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="-2" id="zwv-pZ-T9P"/>
+                                        <constraint firstAttribute="trailing" secondItem="37U-da-Jge" secondAttribute="trailing" id="2VS-8i-CMs"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="37U-da-Jge" secondAttribute="centerY" id="5TV-tK-v9F"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="ljU-lZ-KGJ" secondAttribute="leading" id="DeY-Kn-fqx"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="leading" secondItem="i5H-WP-NpS" secondAttribute="leadingMargin" constant="12" id="FpP-Tj-OSB"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="5" id="Ieb-6G-7dX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ljU-lZ-KGJ" secondAttribute="bottom" constant="0.5" id="Ofr-5b-av8"/>
+                                        <constraint firstItem="ljU-lZ-KGJ" firstAttribute="baseline" secondItem="f7p-3J-Lme" secondAttribute="baseline" id="T1f-M8-9zt"/>
+                                        <constraint firstItem="f7p-3J-Lme" firstAttribute="leading" secondItem="ljU-lZ-KGJ" secondAttribute="trailing" constant="8" symbolic="YES" id="by8-im-2CV"/>
+                                        <constraint firstItem="ljU-lZ-KGJ" firstAttribute="firstBaseline" secondItem="f7p-3J-Lme" secondAttribute="firstBaseline" id="e5E-rI-6N6"/>
+                                        <constraint firstItem="37U-da-Jge" firstAttribute="leading" secondItem="xcU-Mp-2ie" secondAttribute="trailing" constant="58" id="nAV-dG-lGh"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" id="qea-jS-6wj"/>
+                                        <constraint firstItem="ljU-lZ-KGJ" firstAttribute="top" secondItem="i5H-WP-NpS" secondAttribute="topMargin" constant="19" id="rWV-xi-IMS"/>
+                                        <constraint firstItem="yV9-ie-fVG" firstAttribute="centerY" secondItem="i5H-WP-NpS" secondAttribute="centerY" id="uhq-gk-l1k"/>
+                                        <constraint firstItem="xcU-Mp-2ie" firstAttribute="leading" secondItem="yV9-ie-fVG" secondAttribute="trailing" constant="8" symbolic="YES" id="zJa-RK-ByV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cp" destination="ljU-lZ-KGJ" id="p2p-0U-aQQ"/>
                                     <outlet property="favourite" destination="37U-da-Jge" id="m1V-e9-Y2a"/>
+                                    <outlet property="iv" destination="f7p-3J-Lme" id="gfs-NE-Cak"/>
                                     <outlet property="name" destination="xcU-Mp-2ie" id="lKn-ah-Gqp"/>
                                     <outlet property="pokeImage" destination="yV9-ie-fVG" id="Drn-1u-zxy"/>
                                 </connections>

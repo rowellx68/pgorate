@@ -131,6 +131,9 @@ class ViewController: FormViewController {
         if rememberMe.value! {
             Defaults[.ptcUsername] = username.value
             Defaults[.googleUsername] = email.value
+        } else {
+            Defaults[.ptcUsername] = nil
+            Defaults[.googleUsername] = nil
         }
     }
     
