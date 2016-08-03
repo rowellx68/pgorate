@@ -8,33 +8,39 @@
 
 import Foundation
 import Eureka
+import PGoApi
 
-extension ViewController: AuthDelegate, PGoApiDelegate {
+extension ViewController: PGoAuthDelegate, PGoApiDelegate {
     func didReceiveAuth() {
         let request = PGoApiRequest()
         request.simulateAppStart()
-        request.makeRequest(.Login, delegate: self)
+        
+        if ptcAuth != nil {
+            request.makeRequest(.Login, auth: ptcAuth!, delegate: self)
+        } else if googleAuth != nil {
+            request.makeRequest(.Login, auth: googleAuth!, delegate: self)
+        }
     }
     
     func didNotReceiveAuth() {
         disableInput(withCondition: false)
         removeActivityIndicator()
-        showAlert("Login Failed", message: "Please check your credentials and try again.")
+        showAlert("Login Failed", message: "Please check your credentials and try again.\n\nIf you have enabled 2FA for your Google account, create an app specific password.")
     }
     
-    func didNotReceiveAuthGoogle() {
-        disableInput(withCondition: false)
-        removeActivityIndicator()
-        showAlert("Login Failed", message: "Please check your credentials and try again.\n\nIf you have enabled 2FA for your account, create an app specific password.")
-    }
-    
-    func didReceiveApiResponse(intent: ApiIntent, response: ApiResponse) {
+    func didReceiveApiResponse(intent: PGoApiIntent, response: PGoApiResponse) {
         if (intent == .Login) {
-            Api.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
             let request = PGoApiRequest()
             request.getPlayer()
             request.getInventory()
-            request.makeRequest(.GetMapObjects, delegate: self)
+            
+            if ptcAuth != nil {
+                ptcAuth?.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
+                request.makeRequest(.GetMapObjects, auth: ptcAuth!, delegate: self)
+            } else if googleAuth != nil {
+                googleAuth?.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
+                request.makeRequest(.GetMapObjects, auth: googleAuth!, delegate: self)
+            }
         } else if (intent == .GetMapObjects) {
             if response.subresponses.count == 2 {
                 let player = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetPlayerResponse
@@ -58,7 +64,7 @@ extension ViewController: AuthDelegate, PGoApiDelegate {
         }
     }
     
-    func didReceiveApiError(intent: ApiIntent, statusCode: Int?) {
+    func didReceiveApiError(intent: PGoApiIntent, statusCode: Int?) {
         disableInput(withCondition: false)
         removeActivityIndicator()
         showAlert("Oops", message: "An error occured. The login or game servers might be down. Try again later.")

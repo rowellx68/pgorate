@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PGoApi
 
 class PokemonDataViewController: UINavigationController {
 

@@ -8,8 +8,12 @@
 
 import UIKit
 import Eureka
+import PGoApi
 
 class ViewController: FormViewController {
+    
+    var ptcAuth: PtcOAuth? = nil
+    var googleAuth: GPSOAuth? = nil
     
     var playerData: Pogoprotos.Data.PlayerData!
     var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
@@ -80,8 +84,9 @@ class ViewController: FormViewController {
         
         if accountType.value! != "Google" {
             if username.value != nil && password.value != nil {
-                Auth.sharedInstance.delegate = self
-                Auth.sharedInstance.login(username.value!, password: password.value!, provider: AuthType.Ptc)
+                ptcAuth = PtcOAuth()
+                ptcAuth!.delegate = self
+                ptcAuth!.login(withUsername: username.value!, withPassword: password.value!)
                 addActivityIndicator()
                 disableInput(withCondition: true)
             } else {
@@ -89,8 +94,9 @@ class ViewController: FormViewController {
             }
         } else {
             if email.value != nil && password.value != nil {
-                Auth.sharedInstance.delegate = self
-                Auth.sharedInstance.login(email.value!, password: password.value!, provider: AuthType.Google)
+                googleAuth = GPSOAuth()
+                googleAuth!.delegate = self
+                googleAuth!.login(withUsername: email.value!, withPassword: password.value!)
                 addActivityIndicator()
                 disableInput(withCondition: true)
             } else {

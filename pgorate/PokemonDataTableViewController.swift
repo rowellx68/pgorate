@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PGoApi
 
 class PokemonDataTableViewController: UITableViewController {
     
