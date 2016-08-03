@@ -36,6 +36,8 @@ class PokemonDataTableViewController: UITableViewController {
         
         if !pokeData.hasFavorite {
             cell.favourite?.hidden = true
+        } else {
+            cell.favourite?.hidden = false
         }
         
         return cell
