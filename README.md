@@ -12,4 +12,4 @@ Using the initial implementation of the Pokémon GO API on Swift by [Luke Sapan]
 - [x] Google login
 - [x] Show Pokémon
 - [ ] Display Pokémon full details
-- [x] Calculate %
+- [x] Display IV
