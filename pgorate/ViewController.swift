@@ -54,7 +54,7 @@ class ViewController: FormViewController {
                 //46, 204, 113
                 cell.segmentedControl.tintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
             })
-        +++ Section("Credentials")
+            +++ Section(header: "Credentials", footer: "'Remember me' will only save your username or email.")
             <<< TextRow("ptc_username") {
                 $0.title = "Username"
                 $0.value = Defaults[.ptcUsername]
@@ -83,7 +83,7 @@ class ViewController: FormViewController {
                 $0.title = "Password"
         }
             <<< SwitchRow("remember") {
-                $0.title = "Remember Me"
+                $0.title = "Remember me"
                 $0.value = Defaults[.rememberMe]
             }.onChange({ (row) in
                 Defaults[.rememberMe] = row.value!
