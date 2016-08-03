@@ -27,13 +27,13 @@ class SettingsViewController: FormViewController {
             <<< PushRow<String>() {
                 $0.title = "Order by"
                 $0.options = ["Name", "Number", "CP"]
-                $0.value = "Name"
+                $0.value = Defaults[.filterBy]
             }.onChange({ (row) in
                 Defaults[.filterBy] = row.value!
             })
             <<< SwitchRow() {
                 $0.title = "Show nickname"
-                $0.value = false
+                $0.value = Defaults[.showNick]
         }.onChange({ (row) in
             Defaults[.showNick] = row.value!
         })
