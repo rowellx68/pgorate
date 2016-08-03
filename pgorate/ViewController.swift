@@ -9,6 +9,7 @@
 import UIKit
 import Eureka
 import PGoApi
+import SwiftyUserDefaults
 
 class ViewController: FormViewController {
     
@@ -23,6 +24,7 @@ class ViewController: FormViewController {
         super.viewDidLoad()
         
         createForm()
+        setupDefaults()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -30,6 +32,15 @@ class ViewController: FormViewController {
             let view = segue.destinationViewController as! PokemonDataViewController
             view.playerData = playerData
             view.inventoryItems = inventoryItems
+        }
+    }
+    
+    private func setupDefaults() {
+        if !Defaults[.initialSetup] {
+            Defaults[.filterBy] = "Name"
+            Defaults[.showNick] = true
+            
+            Defaults[.initialSetup] = true
         }
     }
     

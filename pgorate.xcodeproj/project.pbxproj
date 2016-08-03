@@ -19,6 +19,7 @@
 		DDA6C88A1D4525CC00625073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8881D4525CC00625073 /* LaunchScreen.storyboard */; };
 		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
 		DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */; };
+		DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DDA6C88B1D4525CC00625073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
 		DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				DD0A437D1D45637A005A8A24 /* PokemonDataViewController.swift */,
 				DD0A437F1D456B1C005A8A24 /* PokemonTableViewCell.swift */,
 				DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */,
+				DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */,
 			);
 			path = pgorate;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */,
 				DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
+				DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */,
 				DD0A43801D456B1C005A8A24 /* PokemonTableViewCell.swift in Sources */,
 				DDA6C8801D4525CC00625073 /* AppDelegate.swift in Sources */,
 				DD0A437E1D45637A005A8A24 /* PokemonDataViewController.swift in Sources */,
