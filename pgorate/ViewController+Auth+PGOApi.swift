@@ -13,13 +13,9 @@ import PGoApi
 extension ViewController: PGoAuthDelegate, PGoApiDelegate {
     func didReceiveAuth() {
         let request = PGoApiRequest()
-        request.simulateAppStart()
         
-        if ptcAuth != nil {
-            request.makeRequest(.Login, auth: ptcAuth!, delegate: self)
-        } else if googleAuth != nil {
-            request.makeRequest(.Login, auth: googleAuth!, delegate: self)
-        }
+        request.simulateAppStart()
+        request.makeRequest(.Login, auth: auth, delegate: self)
     }
     
     func didNotReceiveAuth() {
@@ -34,13 +30,9 @@ extension ViewController: PGoAuthDelegate, PGoApiDelegate {
             request.getPlayer()
             request.getInventory()
             
-            if ptcAuth != nil {
-                ptcAuth?.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
-                request.makeRequest(.GetMapObjects, auth: ptcAuth!, delegate: self)
-            } else if googleAuth != nil {
-                googleAuth?.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
-                request.makeRequest(.GetMapObjects, auth: googleAuth!, delegate: self)
-            }
+            auth.endpoint = "https://\((response.response as! Pogoprotos.Networking.Envelopes.ResponseEnvelope).apiUrl)/rpc"
+            request.makeRequest(.GetMapObjects, auth: auth, delegate: self)
+            
         } else if (intent == .GetMapObjects) {
             if response.subresponses.count == 2 {
                 let player = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetPlayerResponse

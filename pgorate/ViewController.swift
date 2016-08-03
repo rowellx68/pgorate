@@ -12,8 +12,9 @@ import PGoApi
 
 class ViewController: FormViewController {
     
-    var ptcAuth: PtcOAuth? = nil
-    var googleAuth: GPSOAuth? = nil
+    var auth: PGoAuth!
+    private var ptcAuth: PtcOAuth? = nil
+    private var googleAuth: GPSOAuth? = nil
     
     var playerData: Pogoprotos.Data.PlayerData!
     var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
@@ -89,6 +90,8 @@ class ViewController: FormViewController {
                 ptcAuth!.login(withUsername: username.value!, withPassword: password.value!)
                 addActivityIndicator()
                 disableInput(withCondition: true)
+                
+                auth = ptcAuth!
             } else {
                 showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
             }
@@ -99,6 +102,8 @@ class ViewController: FormViewController {
                 googleAuth!.login(withUsername: email.value!, withPassword: password.value!)
                 addActivityIndicator()
                 disableInput(withCondition: true)
+                
+                auth = googleAuth!
             } else {
                 showAlert("Fields Required", message: "All fields are required! How do you expect to login?")
             }
