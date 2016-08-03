@@ -49,6 +49,8 @@ extension ViewController: PGoAuthDelegate, PGoApiDelegate {
                 
                 removeActivityIndicator()
                 performSegueWithIdentifier("showPokemonListSegue", sender: nil)
+                disableInput(withCondition: false)
+                clearPasswordField()
             } else {
                 disableInput(withCondition: false)
                 removeActivityIndicator()

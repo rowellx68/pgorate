@@ -13,6 +13,7 @@ extension DefaultsKeys {
     static let filterBy = DefaultsKey<String>("filterBy")
     static let showNick = DefaultsKey<Bool>("showNick")
     static let initialSetup = DefaultsKey<Bool>("initialSetup")
+    static let rememberMe = DefaultsKey<Bool>("rememberMe")
     
     static let googleUsername = DefaultsKey<String?>("googleUsername")
     static let ptcUsername = DefaultsKey<String?>("ptcUsername")

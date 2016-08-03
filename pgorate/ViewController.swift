@@ -39,6 +39,7 @@ class ViewController: FormViewController {
         if !Defaults[.initialSetup] {
             Defaults[.filterBy] = "Name"
             Defaults[.showNick] = true
+            Defaults[.rememberMe] = false
             
             Defaults[.initialSetup] = true
         }
@@ -83,8 +84,10 @@ class ViewController: FormViewController {
         }
             <<< SwitchRow("remember") {
                 $0.title = "Remember Me"
-                $0.value = false
-            }
+                $0.value = Defaults[.rememberMe]
+            }.onChange({ (row) in
+                Defaults[.rememberMe] = row.value!
+            })
         
             +++ Section(header: "", footer: "Use at your own risk. Don't cry if Niantic bans you.")
             <<< ButtonRow("btn_login") {
@@ -142,6 +145,12 @@ class ViewController: FormViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func clearPasswordField() {
+        let password = form.rowByTag("password") as! PasswordRow
+        password.value = nil
+        password.reload()
     }
     
     func disableInput(withCondition condition: Condition = true) {

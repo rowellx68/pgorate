@@ -46,7 +46,19 @@ class SettingsViewController: FormViewController {
         +++ Section()
             <<< ButtonRow() {
                 $0.title = "Log Out"
-        }
+        }.onCellSelection({ (cell, row) in
+            self.showConfirmation()
+        })
         
+    }
+    
+    func showConfirmation() {
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you would like to log out?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "No", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes, Log out", style: .Destructive){ _ in
+            self.navigationController?.dismissViewControllerAnimated(true, completion: {})
+        })
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
