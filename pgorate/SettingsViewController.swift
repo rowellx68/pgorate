@@ -21,6 +21,11 @@ class SettingsViewController: FormViewController {
         form +++ Section("Trainer")
             <<< LabelRow() {
                 $0.title = "Username"
+                $0.value = Defaults[.trainerName]
+            }
+            <<< LabelRow() {
+                $0.title = "Team"
+                $0.value = Defaults[.trainerTeam]
             }
             
             +++ Section("Pokémon")
@@ -37,6 +42,11 @@ class SettingsViewController: FormViewController {
         }.onChange({ (row) in
             Defaults[.showNick] = row.value!
         })
+        
+        +++ Section()
+            <<< ButtonRow() {
+                $0.title = "Log Out"
+        }
         
     }
 }

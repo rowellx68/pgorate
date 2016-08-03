@@ -9,6 +9,7 @@
 import Foundation
 import Eureka
 import PGoApi
+import SwiftyUserDefaults
 
 extension ViewController: PGoAuthDelegate, PGoApiDelegate {
     func didReceiveAuth() {

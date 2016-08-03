@@ -16,4 +16,7 @@ extension DefaultsKeys {
     
     static let googleUsername = DefaultsKey<String?>("googleUsername")
     static let ptcUsername = DefaultsKey<String?>("ptcUsername")
+    
+    static let trainerName = DefaultsKey<String?>("trainerName")
+    static let trainerTeam = DefaultsKey<String?>("trainerTeam")
 }
