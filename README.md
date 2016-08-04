@@ -16,10 +16,9 @@ Using the initial implementation of the Pokémon GO API on Swift by [Luke Sapan]
 
 ### Building
 
-This project's dependencies are managed using Cocoapods. So to get this working, you will need that installed.
+This project's dependencies are managed using [CocoaPods](https://cocoapods.org/). You are not required to have it installed as all the dependencies are checked in into this repository.
 
-1. `pod install`
-2. Open `pgorate.xcworkspace`
-3. Change project identifier
-4. Run to your device
-5. PROFIT!
+1. Open `pgorate.xcworkspace`
+2. Change project identifier
+3. Build and run on your device
+4. PROFIT!
