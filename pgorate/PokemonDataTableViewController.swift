@@ -72,7 +72,7 @@ class PokemonDataTableViewController: UITableViewController {
     }
     
     private func sortByName() {
-        pokemonList.sortInPlace({ (a, b) -> Bool in
+        pokemonList.sortInPlace{ a, b in
             let aName:String
             let bName:String
             
@@ -83,24 +83,24 @@ class PokemonDataTableViewController: UITableViewController {
             }
             
             if b.hasNickname && Defaults[.showNick] {
-                bName = a.nickname
+                bName = b.nickname
             } else {
                 bName = b.pokemonId.toString()
             }
             
             return aName < bName
-        })
+        }
     }
     
     private func sortById() {
-        pokemonList.sortInPlace({ (a, b) -> Bool in
+        pokemonList.sortInPlace{ a, b in
             return a.pokemonId.rawValue < b.pokemonId.rawValue
-        })
+        }
     }
     
     private func sortByCP() {
-        pokemonList.sortInPlace({ (a, b) -> Bool in
-            return a.cp > b.cp
-        })
+        pokemonList.sortInPlace{ a, b in
+            a.cp > b.cp
+        }
     }
 }
