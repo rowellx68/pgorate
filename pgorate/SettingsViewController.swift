@@ -31,24 +31,26 @@ class SettingsViewController: FormViewController {
             +++ Section("Pokémon")
             <<< PushRow<String>() {
                 $0.title = "Order by"
-                $0.options = ["Name", "Number", "CP"]
+                $0.options = ["Name", "Number", "CP", "IV - Attack", "IV - Defence", "IV - Stamina"]
                 $0.value = Defaults[.filterBy]
-            }.onChange({ (row) in
-                Defaults[.filterBy] = row.value!
-            })
+                }.onChange{ row in
+                    if let val = row.value {
+                        Defaults[.filterBy] = val
+                    }
+            }
             <<< SwitchRow() {
                 $0.title = "Show nickname"
                 $0.value = Defaults[.showNick]
-        }.onChange({ (row) in
-            Defaults[.showNick] = row.value!
-        })
-        
-        +++ Section()
+                }.onChange{ row in
+                    Defaults[.showNick] = row.value!
+            }
+            
+            +++ Section()
             <<< ButtonRow() {
                 $0.title = "Log Out"
-        }.onCellSelection({ (cell, row) in
-            self.showConfirmation()
-        })
+                }.onCellSelection{ (cell, row) in
+                    self.showConfirmation()
+        }
         
     }
     
@@ -57,7 +59,7 @@ class SettingsViewController: FormViewController {
         alert.addAction(UIAlertAction(title: "No", style: .Default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes, Log out", style: .Destructive){ _ in
             self.navigationController?.dismissViewControllerAnimated(true, completion: {})
-        })
+            })
         
         presentViewController(alert, animated: true, completion: nil)
     }

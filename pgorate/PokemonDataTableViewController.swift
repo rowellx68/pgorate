@@ -66,6 +66,12 @@ class PokemonDataTableViewController: UITableViewController {
             sortById()
         case "CP":
             sortByCP()
+        case "IV - Attack":
+            sortByIVAttack()
+        case "IV - Defence":
+            sortByIVDefence()
+        case "IV - Stamina":
+            sortByIVStamina()
         default:
             return
         }
@@ -94,6 +100,24 @@ class PokemonDataTableViewController: UITableViewController {
     private func sortByCP() {
         pokemonList.sortInPlace{ a, b in
             a.cp > b.cp
+        }
+    }
+    
+    private func sortByIVAttack() {
+        pokemonList.sortInPlace{ a, b in
+            a.individualAttack > b.individualAttack
+        }
+    }
+    
+    private func sortByIVDefence() {
+        pokemonList.sortInPlace{ a, b in
+            a.individualDefense > b.individualDefense
+        }
+    }
+    
+    private func sortByIVStamina() {
+        pokemonList.sortInPlace{ a, b in
+            a.individualStamina > b.individualStamina
         }
     }
 }

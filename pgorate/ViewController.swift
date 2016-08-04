@@ -19,7 +19,7 @@ class ViewController: FormViewController {
     
     var playerData: Pogoprotos.Data.PlayerData!
     var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +50,10 @@ class ViewController: FormViewController {
             <<< SegmentedRow<String>("acc_type") {
                 $0.options = ["Pokémon Trainer Club", "Google"]
                 $0.value = "Pokémon Trainer Club"
-            }.cellSetup({ (cell, row) in
-                //46, 204, 113
-                cell.segmentedControl.tintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
-            })
+                }.cellSetup{ cell, _ in
+                    //46, 204, 113
+                    cell.segmentedControl.tintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+            }
             +++ Section(header: "Credentials", footer: "'Remember me' will only save your username or email.")
             <<< TextRow("ptc_username") {
                 $0.title = "Username"
@@ -63,10 +63,10 @@ class ViewController: FormViewController {
                     
                     return accountType.value! == "Google"
                 })
-        }.cellSetup({ (cell, row) in
-            cell.textField.autocapitalizationType = .None
-            cell.textField.autocorrectionType = .No
-        })
+                }.cellSetup{ cell, _ in
+                    cell.textField.autocapitalizationType = .None
+                    cell.textField.autocorrectionType = .No
+            }
             <<< EmailRow("google_username") {
                 $0.title = "Email"
                 $0.value = Defaults[.googleUsername]
@@ -75,26 +75,26 @@ class ViewController: FormViewController {
                     
                     return accountType.value! == "Pokémon Trainer Club"
                 })
-                }.cellSetup({ (cell, row) in
+                }.cellSetup{ cell, _ in
                     cell.textField.autocapitalizationType = .None
                     cell.textField.autocorrectionType = .No
-                })
+            }
             <<< PasswordRow("password") {
                 $0.title = "Password"
-        }
+            }
             <<< SwitchRow("remember") {
                 $0.title = "Remember me"
                 $0.value = Defaults[.rememberMe]
-            }.onChange({ (row) in
-                Defaults[.rememberMe] = row.value!
-            })
-        
+                }.onChange{ row in
+                    Defaults[.rememberMe] = row.value!
+            }
+            
             +++ Section(header: "", footer: "Use at your own risk. Don't cry if Niantic bans you.")
             <<< ButtonRow("btn_login") {
                 $0.title = "Login"
-        }.onCellSelection({ (cell, row) in
-            self.validateAndGetCredentials()
-        })
+                }.onCellSelection{ _, _ in
+                    self.validateAndGetCredentials()
+        }
     }
     
     func validateAndGetCredentials() {
