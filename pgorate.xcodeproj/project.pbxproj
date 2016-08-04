@@ -20,6 +20,7 @@
 		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
 		DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */; };
 		DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */; };
+		DDFD69711D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
 		DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokemonDataTableViewController+PGoApiDeligate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				DD0A437F1D456B1C005A8A24 /* PokemonTableViewCell.swift */,
 				DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */,
 				DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */,
+				DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */,
 			);
 			path = pgorate;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				DD0A437C1D456035005A8A24 /* PokemonDataTableViewController.swift in Sources */,
 				DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */,
+				DDFD69711D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift in Sources */,
 				DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
 				DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */,

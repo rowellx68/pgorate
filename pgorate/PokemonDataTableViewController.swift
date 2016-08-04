@@ -15,10 +15,12 @@ class PokemonDataTableViewController: UITableViewController {
     var playerData: Pogoprotos.Data.PlayerData!
     var pokemonList: [Pogoprotos.Data.PokemonData]!
     var playerStats: Pogoprotos.Data.Player.PlayerStats!
+    var auth: PGoAuth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "PokéRate"
+        self.refreshControl?.addTarget(self, action: #selector(PokemonDataTableViewController.fetchPokemon), forControlEvents: .ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +66,12 @@ class PokemonDataTableViewController: UITableViewController {
             let view = segue.destinationViewController as! SettingsViewController
             view.playerStats = playerStats
         }
+    }
+    
+    func fetchPokemon() {
+        let request = PGoApiRequest()
+        request.getInventory()
+        request.makeRequest(.GetInventory, auth: auth, delegate: self)
     }
     
     func sortPokemon() {

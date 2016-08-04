@@ -14,6 +14,7 @@ class PokemonDataViewController: UINavigationController {
 
     var playerData: Pogoprotos.Data.PlayerData!
     var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
+    var auth: PGoAuth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class PokemonDataViewController: UINavigationController {
         rootViewController.playerData = playerData
         rootViewController.pokemonList = filterPokemonFromInventory(inventoryItems)
         rootViewController.playerStats = filterPlayerStatsFromInventory(inventoryItems)
+        rootViewController.auth = auth
         
         self.viewControllers = [rootViewController]
         setPlayerDefaults()

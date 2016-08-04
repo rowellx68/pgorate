@@ -32,6 +32,7 @@ class ViewController: FormViewController {
             let view = segue.destinationViewController as! PokemonDataViewController
             view.playerData = playerData
             view.inventoryItems = inventoryItems
+            view.auth = auth
         }
     }
     
