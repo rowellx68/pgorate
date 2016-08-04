@@ -1,0 +1,6 @@
+framework module Pods_pgorate {
+  umbrella header "Pods-pgorate-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (3.4.1)
+  - Eureka (1.7.0)
+  - PGoApi (0.1.0):
+    - Alamofire (~> 3.4)
+    - ProtocolBuffers-Swift (~> 3.0)
+  - ProtocolBuffers-Swift (3.0.0)
+  - SwiftyUserDefaults (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Eureka
+  - PGoApi (from `https://github.com/lsapan/pgoapi-swift`, branch `master`)
+  - ProtocolBuffers-Swift (from `https://github.com/alexeyxo/protobuf-swift`, branch `ProtoBuf3.0-Swift2.0`)
+  - SwiftyUserDefaults
+
+EXTERNAL SOURCES:
+  PGoApi:
+    :branch: master
+    :git: https://github.com/lsapan/pgoapi-swift
+  ProtocolBuffers-Swift:
+    :branch: ProtoBuf3.0-Swift2.0
+    :git: https://github.com/alexeyxo/protobuf-swift
+
+CHECKOUT OPTIONS:
+  PGoApi:
+    :commit: 97c68bf757492018c060d8848c1c64a803d4f0d2
+    :git: https://github.com/lsapan/pgoapi-swift
+  ProtocolBuffers-Swift:
+    :commit: f43bcfe55f7c2b19f19363c12d9499dac232f3ae
+    :git: https://github.com/alexeyxo/protobuf-swift
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  PGoApi: 8cee6dd3898aee27925cac4e9d8cdd7d154bfc68
+  ProtocolBuffers-Swift: 948824656ef9f507348481655d409628b0219be0
+  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
+
+PODFILE CHECKSUM: 6a06185b5c5b8adc7273bbac59f911db691cd3b5
+
+COCOAPODS: 1.0.1
