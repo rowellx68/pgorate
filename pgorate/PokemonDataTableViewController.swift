@@ -14,7 +14,7 @@ class PokemonDataTableViewController: UITableViewController {
     
     var playerData: Pogoprotos.Data.PlayerData!
     var pokemonList: [Pogoprotos.Data.PokemonData]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "PokéRate"
@@ -25,7 +25,7 @@ class PokemonDataTableViewController: UITableViewController {
         sortPokemon()
         self.tableView.reloadData()
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pokemonList.count
     }
@@ -73,20 +73,13 @@ class PokemonDataTableViewController: UITableViewController {
     
     private func sortByName() {
         pokemonList.sortInPlace{ a, b in
-            let aName:String
-            let bName:String
+            let aName = a.hasNickname && Defaults[.showNick]
+                ? a.nickname
+                : a.pokemonId.toString()
             
-            if a.hasNickname && Defaults[.showNick] {
-                aName = a.nickname
-            } else {
-                aName = a.pokemonId.toString()
-            }
-            
-            if b.hasNickname && Defaults[.showNick] {
-                bName = b.nickname
-            } else {
-                bName = b.pokemonId.toString()
-            }
+            let bName = b.hasNickname && Defaults[.showNick]
+                ? b.nickname
+                : b.pokemonId.toString()
             
             return aName < bName
         }
