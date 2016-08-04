@@ -94,7 +94,7 @@
                         <barButtonItem key="leftBarButtonItem" image="settings_filled" id="Q9D-rr-dNc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="YZk-Fb-ZTe" kind="show" id="5K3-2Q-jRD"/>
+                                <segue destination="YZk-Fb-ZTe" kind="show" identifier="showSettingsSegue" id="5K3-2Q-jRD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

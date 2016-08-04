@@ -22,6 +22,7 @@ class PokemonDataViewController: UINavigationController {
         
         rootViewController.playerData = playerData
         rootViewController.pokemonList = filterPokemonFromInventory(inventoryItems)
+        rootViewController.playerStats = filterPlayerStatsFromInventory(inventoryItems)
         
         self.viewControllers = [rootViewController]
         setPlayerDefaults()
@@ -37,6 +38,18 @@ class PokemonDataViewController: UINavigationController {
         }
         
         return pokemon
+    }
+    
+    func filterPlayerStatsFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> Pogoprotos.Data.Player.PlayerStats {
+        var stats:[Pogoprotos.Data.Player.PlayerStats] = []
+        
+        for item in inventory {
+            if let stat = item.inventoryItemData.playerStats {
+                stats.append(stat)
+            }
+        }
+        
+        return stats[0]
     }
     
     func setPlayerDefaults() {

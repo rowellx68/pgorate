@@ -14,6 +14,7 @@ class PokemonDataTableViewController: UITableViewController {
     
     var playerData: Pogoprotos.Data.PlayerData!
     var pokemonList: [Pogoprotos.Data.PokemonData]!
+    var playerStats: Pogoprotos.Data.Player.PlayerStats!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,13 @@ class PokemonDataTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showSettingsSegue" {
+            let view = segue.destinationViewController as! SettingsViewController
+            view.playerStats = playerStats
+        }
     }
     
     func sortPokemon() {

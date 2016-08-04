@@ -9,8 +9,11 @@
 import Foundation
 import Eureka
 import SwiftyUserDefaults
+import PGoApi
 
 class SettingsViewController: FormViewController {
+    
+    var playerStats: Pogoprotos.Data.Player.PlayerStats!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,10 @@ class SettingsViewController: FormViewController {
             <<< LabelRow() {
                 $0.title = "Team"
                 $0.value = Defaults[.trainerTeam]
+            }
+            <<< LabelRow() {
+                $0.title = "Level"
+                $0.value = "\(playerStats.level)"
             }
             
             +++ Section("Pokémon")
