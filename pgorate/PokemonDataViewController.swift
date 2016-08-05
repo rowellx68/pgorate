@@ -31,27 +31,19 @@ class PokemonDataViewController: UINavigationController {
     }
     
     func filterPokemonFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> [Pogoprotos.Data.PokemonData] {
-        var pokemon:[Pogoprotos.Data.PokemonData] = []
-        
-        for item in inventory {
-            if item.inventoryItemData.hasPokemonData && !item.inventoryItemData.pokemonData.isEgg {
-                pokemon.append(item.inventoryItemData.pokemonData)
-            }
+        let pokemon = inventory.filter { item in
+            item.inventoryItemData.hasPokemonData && !item.inventoryItemData.pokemonData.isEgg
         }
         
-        return pokemon
+        return pokemon.map{ $0.inventoryItemData.pokemonData }
     }
     
     func filterPlayerStatsFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> Pogoprotos.Data.Player.PlayerStats {
-        var stats:[Pogoprotos.Data.Player.PlayerStats] = []
-        
-        for item in inventory {
-            if let stat = item.inventoryItemData.playerStats {
-                stats.append(stat)
-            }
+        let stats = inventory.filter { i in
+            i.inventoryItemData.hasPlayerStats
         }
         
-        return stats[0]
+        return stats.first!.inventoryItemData.playerStats
     }
     
     func setPlayerDefaults() {
