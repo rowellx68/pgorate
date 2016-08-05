@@ -8,6 +8,7 @@
 
 import UIKit
 import PGoApi
+import RealmSwift
 import SwiftyUserDefaults
 
 class PokemonDataViewController: UINavigationController {
@@ -15,16 +16,25 @@ class PokemonDataViewController: UINavigationController {
     var playerData: Pogoprotos.Data.PlayerData!
     var inventoryItems: [Pogoprotos.Inventory.InventoryItem]!
     var auth: PGoAuth!
+    private var realm: Realm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        realm = try! Realm(configuration: Realm.Configuration())
+        
+        try! realm!.write {
+            realm!.deleteAll()
+        }
+        
+        InventoryUtilities.filterPokemonFromInventoryInsertToDatabase(inventoryItems, realm: realm!)
+        
         let rootViewController = self.topViewController as! PokemonDataTableViewController
         
         rootViewController.playerData = playerData
-        rootViewController.pokemonList = InventoryUtilities.filterPokemonFromInventory(inventoryItems)
         rootViewController.playerStats = InventoryUtilities.filterPlayerStatsFromInventory(inventoryItems)
         rootViewController.auth = auth
+        rootViewController.realm = realm!
         
         self.viewControllers = [rootViewController]
         setPlayerDefaults()

@@ -17,6 +17,11 @@ extension PokemonDataTableViewController: PGoApiDelegate {
                 let inventory = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetInventoryResponse
                 
                 if inventory.hasInventoryDelta {
+                    try! realm!.write {
+                        realm!.deleteAll()
+                    }
+                    
+                    InventoryUtilities.filterPokemonFromInventoryInsertToDatabase(inventory.inventoryDelta.inventoryItems, realm: realm!)
                     pokemonList = InventoryUtilities.filterPokemonFromInventory(inventory.inventoryDelta.inventoryItems)
                     sortPokemon()
                     tableView.reloadData()

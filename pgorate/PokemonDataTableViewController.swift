@@ -8,17 +8,23 @@
 
 import UIKit
 import PGoApi
+import RealmSwift
 import SwiftyUserDefaults
 
 class PokemonDataTableViewController: UITableViewController {
     
     var playerData: Pogoprotos.Data.PlayerData!
-    var pokemonList: [Pogoprotos.Data.PokemonData]!
     var playerStats: Pogoprotos.Data.Player.PlayerStats!
     var auth: PGoAuth!
+    var realm: Realm!
+    
+    private var pokemonDataList: Results<Pokemon>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemonDataList = realm.objects(Pokemon.self)
+        
         self.navigationItem.title = "PokéRate"
         self.refreshControl?.addTarget(self, action: #selector(PokemonDataTableViewController.fetchPokemon), forControlEvents: .ValueChanged)
     }
@@ -30,21 +36,21 @@ class PokemonDataTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemonList.count
+        return pokemonDataList!.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pokeCell") as! PokemonTableViewCell!
-        let pokeData = pokemonList[indexPath.row]
+        let pokeData = pokemonDataList![indexPath.row]
         
-        cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
+        cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonID)")
         
         cell.cp.text = "CP: \(pokeData.cp)"
         cell.iv.text = "Atk/Def/Stm: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
         cell.name.text = PokemonUtilities.getName(ofPokemon: pokeData, showNickname: Defaults[.showNick])
-        cell.level.text = "Level: \(PokemonUtilities.getLevel(ofPokemon: pokeData))"
+        cell.level.text = "Level: \(pokeData.level)"
         
-        if !pokeData.hasFavorite {
+        if !pokeData.favorite {
             cell.favourite?.hidden = true
         } else {
             cell.favourite?.hidden = false
@@ -73,63 +79,22 @@ class PokemonDataTableViewController: UITableViewController {
     func sortPokemon() {
         switch Defaults[.filterBy] {
         case "Name":
-            sortByName()
+            pokemonDataList = Defaults[.showNick]
+                ? pokemonDataList?.sorted(["nickname", "pokemonName", "cp"])
+                : pokemonDataList?.sorted(["pokemonName", "cp"])
+            
         case "Number":
-            sortById()
+            pokemonDataList = pokemonDataList?.sorted(["pokemonID", "cp"])
         case "CP":
-            sortByCP()
+            pokemonDataList = pokemonDataList?.sorted("cp", ascending: false)
         case "IV - Attack":
-            sortByIVAttack()
+            pokemonDataList = pokemonDataList?.sorted("individualAttack", ascending: false)
         case "IV - Defence":
-            sortByIVDefence()
+            pokemonDataList = pokemonDataList?.sorted("individualDefense", ascending: false)
         case "IV - Stamina":
-            sortByIVStamina()
+            pokemonDataList = pokemonDataList?.sorted("indivudualStamina", ascending: false)
         default:
             return
-        }
-    }
-    
-    private func sortByName() {
-        pokemonList.sortInPlace{ a, b in
-            let aName = a.hasNickname && Defaults[.showNick]
-                ? a.nickname
-                : a.pokemonId.toString()
-            
-            let bName = b.hasNickname && Defaults[.showNick]
-                ? b.nickname
-                : b.pokemonId.toString()
-            
-            return aName < bName
-        }
-    }
-    
-    private func sortById() {
-        pokemonList.sortInPlace{ a, b in
-            return a.pokemonId.rawValue < b.pokemonId.rawValue
-        }
-    }
-    
-    private func sortByCP() {
-        pokemonList.sortInPlace{ a, b in
-            a.cp > b.cp
-        }
-    }
-    
-    private func sortByIVAttack() {
-        pokemonList.sortInPlace{ a, b in
-            a.individualAttack > b.individualAttack
-        }
-    }
-    
-    private func sortByIVDefence() {
-        pokemonList.sortInPlace{ a, b in
-            a.individualDefense > b.individualDefense
-        }
-    }
-    
-    private func sortByIVStamina() {
-        pokemonList.sortInPlace{ a, b in
-            a.individualStamina > b.individualStamina
         }
     }
 }

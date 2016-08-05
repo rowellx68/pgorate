@@ -8,6 +8,7 @@
 
 import Foundation
 import PGoApi
+import RealmSwift
 
 class InventoryUtilities {
     static func filterPokemonFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> [Pogoprotos.Data.PokemonData] {
@@ -25,6 +26,37 @@ class InventoryUtilities {
         
         return stats.first!.inventoryItemData.playerStats
     }
+    
+    static func filterPokemonFromInventoryInsertToDatabase(inventory: [Pogoprotos.Inventory.InventoryItem], realm: Realm) {
+        let pokemon = self.filterPokemonFromInventory(inventory)
+        pokemon.forEach{ mon in
+            let monObj = Pokemon()
+            monObj.recordID = "\(mon.id)"
+            monObj.pokemonID = Int(mon.pokemonId.rawValue)
+            monObj.pokemonName = mon.pokemonId.toString()
+            monObj.favorite = mon.hasFavorite
+            monObj.nickname = mon.hasNickname ? mon.nickname : nil
+            monObj.cp = Int(mon.cp)
+            monObj.stamina = Int(mon.stamina)
+            monObj.staminaMax = Int(mon.staminaMax)
+            monObj.move1 = mon.move1.toString()
+            monObj.move2 = mon.move2.toString()
+            monObj.deployedToGym = mon.hasDeployedFortId
+            monObj.height = mon.heightM
+            monObj.weight = mon.weightKg
+            monObj.individualAttack = Int(mon.individualAttack)
+            monObj.individualDefense = Int(mon.individualDefense)
+            monObj.individualStamina = Int(mon.individualStamina)
+            monObj.cpMultiplier = mon.cpMultiplier
+            monObj.additionalCpMultiplier = mon.additionalCpMultiplier
+            monObj.battlesAttacked = Int(mon.battlesAttacked)
+            monObj.battlesDefended = Int(mon.battlesDefended)
+            
+            try! realm.write {
+                realm.add(monObj)
+            }
+        }
+    }
 }
 
 class PokemonUtilities {
@@ -39,7 +71,27 @@ class PokemonUtilities {
         }
     }
     
+    static func getName(ofPokemon pokemon: Pokemon, showNickname: Bool) -> String {
+        if pokemon.nickname != nil && showNickname {
+            return pokemon.nickname!
+        } else {
+            // ideally we pull from localised strings instead
+            return pokemon.pokemonName
+        }
+    }
+    
     static func getLevel(ofPokemon pokemon: Pogoprotos.Data.PokemonData) -> Float {
+        var index = 0
+        
+        let cpm = Float(pokemon.cpMultiplier + pokemon.additionalCpMultiplier)
+        while cpm > cpMultiplier[index] {
+            index += 1
+        }
+        
+        return 1.0 + 0.5 * Float(index)
+    }
+    
+    static func getLevel(ofPokemon pokemon: Pokemon) -> Float {
         var index = 0
         
         let cpm = Float(pokemon.cpMultiplier + pokemon.additionalCpMultiplier)
