@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import SwiftyUserDefaults
 
 class PokemonDetailViewController: FormViewController {
 
@@ -16,7 +17,9 @@ class PokemonDetailViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(pokemon)
+        navigationItem.title = Defaults[.showNick]
+            ? pokemon.nickname ?? pokemon.pokemonName
+            : pokemon.pokemonName
     }
 
     override func didReceiveMemoryWarning() {
