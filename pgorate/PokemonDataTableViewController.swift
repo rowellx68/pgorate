@@ -42,6 +42,7 @@ class PokemonDataTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pokeCell") as! PokemonTableViewCell!
         let pokeData = pokemonDataList![indexPath.row]
+        let hp = Float(pokeData.stamina)/Float(pokeData.staminaMax)
         
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonID)")
         
@@ -49,6 +50,15 @@ class PokemonDataTableViewController: UITableViewController {
         cell.iv.text = "Atk/Def/Stm: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
         cell.name.text = PokemonUtilities.getName(ofPokemon: pokeData, showNickname: Defaults[.showNick])
         cell.level.text = "Level: \(pokeData.level)"
+        cell.hp.setProgress(hp, animated: false)
+        
+        if hp > 0.60 {
+            cell.hp.progressTintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+        } else if hp > 0.30 {
+            cell.hp.progressTintColor = UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)
+        } else {
+            cell.hp.progressTintColor = UIColor(red: 231/255, green:76/255, blue:60/255, alpha: 1)
+        }
         
         if !pokeData.favorite {
             cell.favourite?.hidden = true

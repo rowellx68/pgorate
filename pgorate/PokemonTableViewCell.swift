@@ -16,4 +16,5 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var iv: UILabel!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var favourite: UIImageView?
+    @IBOutlet weak var hp: UIProgressView!
 }
