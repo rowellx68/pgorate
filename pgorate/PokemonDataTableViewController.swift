@@ -60,6 +60,7 @@ class PokemonDataTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showPokemonDetailSegue", sender: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -67,6 +68,9 @@ class PokemonDataTableViewController: UITableViewController {
         if segue.identifier == "showSettingsSegue" {
             let view = segue.destinationViewController as! SettingsViewController
             view.playerStats = playerStats
+        } else if segue.identifier == "showPokemonDetailSegue" {
+            let view = segue.destinationViewController as! PokemonDetailViewController
+            view.pokemon = pokemonDataList![tableView.indexPathForSelectedRow!.row]
         }
     }
     

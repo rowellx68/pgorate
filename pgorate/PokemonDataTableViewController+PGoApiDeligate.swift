@@ -22,7 +22,6 @@ extension PokemonDataTableViewController: PGoApiDelegate {
                     }
                     
                     InventoryUtilities.filterPokemonFromInventoryInsertToDatabase(inventory.inventoryDelta.inventoryItems, realm: realm!)
-                    pokemonList = InventoryUtilities.filterPokemonFromInventory(inventory.inventoryDelta.inventoryItems)
                     sortPokemon()
                     tableView.reloadData()
                 }

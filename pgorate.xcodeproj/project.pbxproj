@@ -20,6 +20,7 @@
 		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
 		DDD72BBC1D54A39F000A7551 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD72BBB1D54A39F000A7551 /* Utilities.swift */; };
 		DDD72BBF1D552970000A7551 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD72BBE1D552970000A7551 /* Pokemon.swift */; };
+		DDD72BC11D5541EF000A7551 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD72BC01D5541EF000A7551 /* PokemonDetailViewController.swift */; };
 		DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */; };
 		DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */; };
 		DDFD69711D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */; };
@@ -43,6 +44,7 @@
 		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
 		DDD72BBB1D54A39F000A7551 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		DDD72BBE1D552970000A7551 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		DDD72BC01D5541EF000A7551 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokemonDataTableViewController+PGoApiDeligate.swift"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */,
 				DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */,
 				DDD72BBB1D54A39F000A7551 /* Utilities.swift */,
+				DDD72BC01D5541EF000A7551 /* PokemonDetailViewController.swift */,
 			);
 			path = pgorate;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				DDFD69711D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift in Sources */,
 				DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */,
 				DDA6C8821D4525CC00625073 /* ViewController.swift in Sources */,
+				DDD72BC11D5541EF000A7551 /* PokemonDetailViewController.swift in Sources */,
 				DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */,
 				DDD72BBF1D552970000A7551 /* Pokemon.swift in Sources */,
 				DD0A43801D456B1C005A8A24 /* PokemonTableViewCell.swift in Sources */,
