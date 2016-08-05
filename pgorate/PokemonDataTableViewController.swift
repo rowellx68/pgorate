@@ -42,6 +42,7 @@ class PokemonDataTableViewController: UITableViewController {
         cell.cp.text = "CP: \(pokeData.cp)"
         cell.iv.text = "Atk/Def/Stm: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
         cell.name.text = PokemonUtilities.getName(ofPokemon: pokeData, showNickname: Defaults[.showNick])
+        cell.level.text = "Level: \(PokemonUtilities.getLevel(ofPokemon: pokeData))"
         
         if !pokeData.hasFavorite {
             cell.favourite?.hidden = true
