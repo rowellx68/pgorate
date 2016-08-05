@@ -26,3 +26,14 @@ class InventoryUtilities {
         return stats.first!.inventoryItemData.playerStats
     }
 }
+
+class PokemonUtilities {
+    static func getName(ofPokemon pokemon: Pogoprotos.Data.PokemonData, showNickname: Bool) -> String {
+        if pokemon.hasNickname && showNickname {
+            return pokemon.nickname
+        } else {
+            // ideally we pull from localised strings instead
+            return pokemon.pokemonId.description.stringByReplacingOccurrencesOfString(".", withString: "")
+        }
+    }
+}
