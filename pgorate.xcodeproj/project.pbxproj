@@ -18,6 +18,7 @@
 		DDA6C8871D4525CC00625073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8861D4525CC00625073 /* Assets.xcassets */; };
 		DDA6C88A1D4525CC00625073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA6C8881D4525CC00625073 /* LaunchScreen.storyboard */; };
 		DDACB2AD1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */; };
+		DDD72BBC1D54A39F000A7551 /* InventoryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD72BBB1D54A39F000A7551 /* InventoryUtilities.swift */; };
 		DDFD696D1D527B5D00DABE34 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */; };
 		DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */; };
 		DDFD69711D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */; };
@@ -39,6 +40,7 @@
 		DDA6C8891D4525CC00625073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA6C88B1D4525CC00625073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDACB2AC1D4545D400B1E049 /* ViewController+Auth+PGOApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Auth+PGOApi.swift"; sourceTree = "<group>"; };
+		DDD72BBB1D54A39F000A7551 /* InventoryUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryUtilities.swift; sourceTree = "<group>"; };
 		DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PokemonDataTableViewController+PGoApiDeligate.swift"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				DDFD696C1D527B5D00DABE34 /* SettingsViewController.swift */,
 				DDFD696E1D5285DF00DABE34 /* UserDefaultsKeys.swift */,
 				DDFD69701D53BFFC00DABE34 /* PokemonDataTableViewController+PGoApiDeligate.swift */,
+				DDD72BBB1D54A39F000A7551 /* InventoryUtilities.swift */,
 			);
 			path = pgorate;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				DDFD696F1D5285DF00DABE34 /* UserDefaultsKeys.swift in Sources */,
 				DD0A43801D456B1C005A8A24 /* PokemonTableViewCell.swift in Sources */,
 				DDA6C8801D4525CC00625073 /* AppDelegate.swift in Sources */,
+				DDD72BBC1D54A39F000A7551 /* InventoryUtilities.swift in Sources */,
 				DD0A437E1D45637A005A8A24 /* PokemonDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

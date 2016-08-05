@@ -17,7 +17,7 @@ extension PokemonDataTableViewController: PGoApiDelegate {
                 let inventory = response.subresponses[0] as! Pogoprotos.Networking.Responses.GetInventoryResponse
                 
                 if inventory.hasInventoryDelta {
-                    pokemonList = filterPokemonFromInventory(inventory.inventoryDelta.inventoryItems)
+                    pokemonList = InventoryUtilities.filterPokemonFromInventory(inventory.inventoryDelta.inventoryItems)
                     sortPokemon()
                     tableView.reloadData()
                 }
@@ -39,17 +39,5 @@ extension PokemonDataTableViewController: PGoApiDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         
         presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func filterPokemonFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> [Pogoprotos.Data.PokemonData] {
-        var pokemon:[Pogoprotos.Data.PokemonData] = []
-        
-        for item in inventory {
-            if item.inventoryItemData.hasPokemonData && !item.inventoryItemData.pokemonData.isEgg {
-                pokemon.append(item.inventoryItemData.pokemonData)
-            }
-        }
-        
-        return pokemon
     }
 }

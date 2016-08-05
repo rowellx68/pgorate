@@ -22,28 +22,12 @@ class PokemonDataViewController: UINavigationController {
         let rootViewController = self.topViewController as! PokemonDataTableViewController
         
         rootViewController.playerData = playerData
-        rootViewController.pokemonList = filterPokemonFromInventory(inventoryItems)
-        rootViewController.playerStats = filterPlayerStatsFromInventory(inventoryItems)
+        rootViewController.pokemonList = InventoryUtilities.filterPokemonFromInventory(inventoryItems)
+        rootViewController.playerStats = InventoryUtilities.filterPlayerStatsFromInventory(inventoryItems)
         rootViewController.auth = auth
         
         self.viewControllers = [rootViewController]
         setPlayerDefaults()
-    }
-    
-    func filterPokemonFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> [Pogoprotos.Data.PokemonData] {
-        let pokemon = inventory.filter { item in
-            item.inventoryItemData.hasPokemonData && !item.inventoryItemData.pokemonData.isEgg
-        }
-        
-        return pokemon.map{ $0.inventoryItemData.pokemonData }
-    }
-    
-    func filterPlayerStatsFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> Pogoprotos.Data.Player.PlayerStats {
-        let stats = inventory.filter { i in
-            i.inventoryItemData.hasPlayerStats
-        }
-        
-        return stats.first!.inventoryItemData.playerStats
     }
     
     func setPlayerDefaults() {
