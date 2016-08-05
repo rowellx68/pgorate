@@ -54,6 +54,10 @@ class ViewController: FormViewController {
                 }.cellSetup{ cell, _ in
                     //46, 204, 113
                     cell.segmentedControl.tintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+                }.onChange{ _ in
+                    let password = self.form.rowByTag("password") as! PasswordRow
+                    password.value = nil
+                    password.reload()
             }
             +++ Section(header: "Credentials", footer: "'Remember me' will only save your username or email.")
             <<< TextRow("ptc_username") {
