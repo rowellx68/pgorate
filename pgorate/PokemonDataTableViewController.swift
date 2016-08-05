@@ -40,7 +40,7 @@ class PokemonDataTableViewController: UITableViewController {
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonId.hashValue)")
         
         cell.cp.text = "CP: \(pokeData.cp)"
-        cell.iv.text = "IV: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
+        cell.iv.text = "Atk/Def/Stm: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
         cell.name.text = PokemonUtilities.getName(ofPokemon: pokeData, showNickname: Defaults[.showNick])
         
         if !pokeData.hasFavorite {

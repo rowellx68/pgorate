@@ -55,6 +55,7 @@ class ViewController: FormViewController {
                     //46, 204, 113
                     cell.segmentedControl.tintColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
                 }.onChange{ _ in
+                    self.resignFirstResponder()
                     let password = self.form.rowByTag("password") as! PasswordRow
                     password.value = nil
                     password.reload()
