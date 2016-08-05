@@ -5,6 +5,11 @@ PODS:
     - Alamofire (~> 3.4)
     - ProtocolBuffers-Swift (~> 3.0)
   - ProtocolBuffers-Swift (3.0.0)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
+  - RealmSwift (1.0.2):
+    - Realm (= 1.0.2)
   - SwiftyUserDefaults (2.2.0)
 
 DEPENDENCIES:
@@ -12,6 +17,7 @@ DEPENDENCIES:
   - Eureka
   - PGoApi (from `https://github.com/lsapan/pgoapi-swift`, branch `master`)
   - ProtocolBuffers-Swift (from `https://github.com/alexeyxo/protobuf-swift`, branch `ProtoBuf3.0-Swift2.0`)
+  - RealmSwift
   - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
@@ -35,8 +41,10 @@ SPEC CHECKSUMS:
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   PGoApi: 8cee6dd3898aee27925cac4e9d8cdd7d154bfc68
   ProtocolBuffers-Swift: 948824656ef9f507348481655d409628b0219be0
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
+  RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
 
-PODFILE CHECKSUM: 6a06185b5c5b8adc7273bbac59f911db691cd3b5
+PODFILE CHECKSUM: 69d6773a9ba5b5574645aa059356cf1e73da7cae
 
 COCOAPODS: 1.0.1
