@@ -19,8 +19,8 @@ class InventoryUtilities {
     }
     
     static func filterPlayerStatsFromInventory(inventory: [Pogoprotos.Inventory.InventoryItem]) -> Pogoprotos.Data.Player.PlayerStats {
-        let stats = inventory.filter { i in
-            i.inventoryItemData.hasPlayerStats
+        let stats = inventory.filter { item in
+            item.inventoryItemData.hasPlayerStats
         }
         
         return stats.first!.inventoryItemData.playerStats
