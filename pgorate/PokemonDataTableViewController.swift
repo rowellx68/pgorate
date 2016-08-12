@@ -106,7 +106,7 @@ class PokemonDataTableViewController: UITableViewController {
         case "IV - Defence":
             pokemonDataList = pokemonDataList?.sorted("individualDefense", ascending: false)
         case "IV - Stamina":
-            pokemonDataList = pokemonDataList?.sorted("indivudualStamina", ascending: false)
+            pokemonDataList = pokemonDataList?.sorted("individualStamina", ascending: false)
         case "IV Perfection":
             pokemonDataList = pokemonDataList?.sorted("ivPerfection", ascending: false)
         case "Level":
