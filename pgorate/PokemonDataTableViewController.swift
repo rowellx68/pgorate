@@ -91,28 +91,26 @@ class PokemonDataTableViewController: UITableViewController {
     }
     
     func sortPokemon() {
-        switch Defaults[.filterBy] {
-        case "Name":
+        switch Ordering(rawValue: Defaults[.filterBy])! {
+        case .Name:
             pokemonDataList = Defaults[.showNick]
                 ? pokemonDataList?.sorted(["nickname", "pokemonName", "cp"])
                 : pokemonDataList?.sorted(["pokemonName", "cp"])
             
-        case "Number":
+        case .Number:
             pokemonDataList = pokemonDataList?.sorted(["pokemonID", "cp"])
-        case "CP":
+        case .CP:
             pokemonDataList = pokemonDataList?.sorted("cp", ascending: false)
-        case "IV - Attack":
+        case .IVAttack:
             pokemonDataList = pokemonDataList?.sorted("individualAttack", ascending: false)
-        case "IV - Defence":
+        case .IVDefense:
             pokemonDataList = pokemonDataList?.sorted("individualDefense", ascending: false)
-        case "IV - Stamina":
+        case .IVStamina:
             pokemonDataList = pokemonDataList?.sorted("individualStamina", ascending: false)
-        case "IV Perfection":
+        case .IVPerfection:
             pokemonDataList = pokemonDataList?.sorted("ivPerfection", ascending: false)
-        case "Level":
+        case .Level:
             pokemonDataList = pokemonDataList?.sorted("level", ascending: false)
-        default:
-            return
         }
     }
 }
