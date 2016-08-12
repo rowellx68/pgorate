@@ -38,7 +38,7 @@ class SettingsViewController: FormViewController {
             +++ Section("Pokémon")
             <<< PushRow<String>() {
                 $0.title = "Order by"
-                $0.options = ["Name", "Number", "CP", "IV - Attack", "IV - Defence", "IV - Stamina"]
+                $0.options = ["CP", "IV - Attack", "IV - Defence", "IV - Stamina", "IV Perfection", "Level", "Name", "Number"]
                 $0.value = Defaults[.filterBy]
                 }.onChange{ row in
                     if let val = row.value {

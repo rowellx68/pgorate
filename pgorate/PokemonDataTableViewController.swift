@@ -47,7 +47,7 @@ class PokemonDataTableViewController: UITableViewController {
         cell.pokeImage.image = UIImage(named: "\(pokeData.pokemonID)")
         
         cell.cp.text = "CP: \(pokeData.cp)"
-        cell.iv.text = "Atk/Def/Stm: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
+        cell.iv.text = "Atk/Def/Sta: \(pokeData.individualAttack)/\(pokeData.individualDefense)/\(pokeData.individualStamina)"
         cell.name.text = PokemonUtilities.getName(ofPokemon: pokeData, showNickname: Defaults[.showNick])
         cell.level.text = "Level: \(pokeData.level)"
         cell.hp.setProgress(hp, animated: false)
@@ -107,6 +107,10 @@ class PokemonDataTableViewController: UITableViewController {
             pokemonDataList = pokemonDataList?.sorted("individualDefense", ascending: false)
         case "IV - Stamina":
             pokemonDataList = pokemonDataList?.sorted("indivudualStamina", ascending: false)
+        case "IV Perfection":
+            pokemonDataList = pokemonDataList?.sorted("ivPerfection", ascending: false)
+        case "Level":
+            pokemonDataList = pokemonDataList?.sorted("level", ascending: false)
         default:
             return
         }

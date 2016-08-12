@@ -52,6 +52,9 @@ class InventoryUtilities {
             monObj.battlesAttacked = Int(mon.battlesAttacked)
             monObj.battlesDefended = Int(mon.battlesDefended)
             
+            monObj.level = PokemonUtilities.getLevel(ofPokemon: mon)
+            monObj.ivPerfection = PokemonUtilities.getIVPerfection(ofPokemon: mon)
+            
             try! realm.write {
                 realm.add(monObj)
             }
@@ -100,5 +103,9 @@ class PokemonUtilities {
         }
         
         return 1.0 + 0.5 * Float(index)
+    }
+    
+    static func getIVPerfection(ofPokemon pokemon: Pogoprotos.Data.PokemonData) -> Float {
+        return Float(pokemon.individualAttack + pokemon.individualDefense + pokemon.individualStamina)/45.0 * 100.0
     }
 }

@@ -38,15 +38,18 @@ class Pokemon: Object {
     dynamic var battlesAttacked = 0
     dynamic var battlesDefended = 0
     
-    var level: Float {
-        return PokemonUtilities.getLevel(ofPokemon: self)
-    }
+    dynamic var level: Float = 0.0
+    dynamic var ivPerfection: Float = 0.0
+    
+//    var level: Float {
+//        return PokemonUtilities.getLevel(ofPokemon: self)
+//    }
     
     override static func primaryKey() -> String? {
         return "recordID"
     }
     
-    override static func ignoredProperties() -> [String] {
-        return ["level"]
-    }
+//    override static func ignoredProperties() -> [String] {
+//        return ["level"]
+//    }
 }
